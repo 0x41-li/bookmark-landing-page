@@ -1,29 +1,20 @@
-import { SvgIcon } from "@mui/material";
+import { SvgIcon, SxProps } from "@mui/material";
 
 type LogoSVGProps = {
   circleFillColor: string;
   bookmarkPathIconFillColor: string;
   bookmarkTextFillColor: string;
-  isMenuOpen: boolean;
+  sx: SxProps;
 };
 
 const LogoSVG = ({
   circleFillColor,
   bookmarkPathIconFillColor,
   bookmarkTextFillColor,
-  isMenuOpen,
+  sx,
 }: LogoSVGProps) => {
   return (
-    <SvgIcon
-      viewBox="0 0 149 25"
-      sx={{
-        width: 149,
-        height: 25,
-        "& > *": {
-          transition: isMenuOpen ? "fill 400ms ease-in-out 400ms" : "",
-        },
-      }}
-    >
+    <SvgIcon viewBox="0 0 149 25" sx={sx}>
       <svg xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"

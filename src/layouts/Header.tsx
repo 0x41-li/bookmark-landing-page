@@ -40,7 +40,15 @@ const Header: React.FC = () => {
             bookmarkTextFillColor={
               isMenuOpen ? "#FFF" : theme.palette.darkBlue.main
             }
-            isMenuOpen={isMenuOpen}
+            sx={{
+              width: 149,
+              height: 25,
+              "& > *": {
+                transition: isMenuOpen
+                  ? "fill 400ms ease-in-out 400ms"
+                  : "fill 400ms ease-in-out 1700ms",
+              },
+            }}
           />
         </Link>
 
@@ -56,66 +64,60 @@ const Header: React.FC = () => {
             padding: "0px",
             cursor: "pointer",
             zIndex: "9",
+            "& > *": {
+              position: "absolute",
+              left: "0",
+              width: "18px",
+              height: "3px",
+            },
           }}
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
           <Box
             component="span"
             sx={{
-              position: "absolute",
               top: isMenuOpen ? "50%" : "0",
-              left: "0",
               translate: isMenuOpen ? "0 -50%" : "0 0",
               transformOrigin: "center",
-              width: "18px",
-              height: "3px",
               rotate: isMenuOpen ? "45deg" : "",
               backgroundColor: (theme) =>
                 isMenuOpen ? "#FFF" : theme.palette.darkBlue.main,
               transition: isMenuOpen
                 ? "rotate 400ms ease-in-out 800ms, translate 400ms ease-in-out 400ms, top 400ms ease-in-out 200ms, background-color 400ms ease-in-out 400ms"
-                : "/rotate 400ms ease-in-out, translate 400ms ease-in-out 400ms, top 400ms ease-in-out 200ms, background-color 400ms ease-in-out 800ms",
+                : "rotate 400ms ease-in-out, translate 400ms ease-in-out 400ms, top 400ms ease-in-out 200ms, background-color 400ms ease-in-out 1700ms",
             }}
           />
 
           <Box
             component="span"
             sx={{
-              position: "absolute",
               top: "6px",
-              left: "0",
-              width: "18px",
-              height: "3px",
               backgroundColor: (theme) =>
                 isMenuOpen ? "#FFF" : theme.palette.darkBlue.main,
               opacity: isMenuOpen ? "0" : "1",
               transition: isMenuOpen
                 ? "opacity 400ms ease-in-out, background-color 400ms ease-in-out 800ms"
-                : "",
+                : "opacity 400ms ease-in-out, background-color 400ms ease-in-out 1700ms",
             }}
           />
 
           <Box
             component="span"
             sx={{
-              position: "absolute",
               bottom: isMenuOpen ? "50%" : "0",
-              left: "0",
               translate: isMenuOpen ? "0 50%" : "0 0",
               transformOrigin: "center",
               rotate: isMenuOpen ? "-45deg" : "",
-              width: "18px",
-              height: "3px",
               backgroundColor: (theme) =>
                 isMenuOpen ? "#FFF" : theme.palette.darkBlue.main,
               transition: isMenuOpen
                 ? "rotate 400ms ease-in-out 800ms, translate 400ms ease-in-out 400ms, bottom 400ms ease-in-out 200ms, background-color 400ms ease-in-out 400ms"
-                : "/rotate 400ms ease-in-out, translate 400ms ease-in-out 400ms, bottom 400ms ease-in-out 200ms, background-color 400ms ease-in-out 800ms",
+                : "rotate 400ms ease-in-out, translate 400ms ease-in-out 400ms, bottom 400ms ease-in-out 200ms, background-color 400ms ease-in-out 1700ms",
             }}
           />
         </Box>
 
-        {/* Menu and Social Media Modal */}
+        {/* Menu and Social Media Modal + the dark blue background */}
         <Box
           sx={{
             position: "absolute",
@@ -123,7 +125,9 @@ const Header: React.FC = () => {
             left: "0",
             height: "100vh",
             width: "100vw",
-            transition: isMenuOpen ? "top 800ms ease-in-out 400ms" : "",
+            transition: isMenuOpen
+              ? "top 800ms ease-in-out 400ms"
+              : "top 800ms ease-in-out 1200ms",
             zIndex: "8",
           }}
         >
@@ -179,7 +183,9 @@ const Header: React.FC = () => {
 
                         transition: isMenuOpen
                           ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
-                          : ``,
+                          : `opacity 400ms ease-in-out ${
+                              1000 - (i + 2) * 100
+                            }ms`,
                       }}
                     >
                       {link.text}
@@ -211,7 +217,7 @@ const Header: React.FC = () => {
 
                       transition: isMenuOpen
                         ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
-                        : ``,
+                        : `opacity 400ms ease-in-out ${1000 - (i + 2) * 100}ms`,
 
                       "&:nth-last-of-type(2)": {
                         borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
@@ -247,8 +253,8 @@ const Header: React.FC = () => {
                       display: "flex",
                       opacity: isMenuOpen ? "1" : "0",
                       transition: isMenuOpen
-                        ? "opacity 400ms ease-in-out 1600ms"
-                        : "",
+                        ? `opacity 400ms ease-in-out ${1400 + (i + 1) * 100}ms`
+                        : `opacity 400ms ease-in-out ${(i + 1) * 100}ms`,
                     }}
                   >
                     <SocialMediaIcon
