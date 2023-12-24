@@ -1,0 +1,33 @@
+{
+  "header": {
+    "menu": [
+      {
+        "text": "features",
+        "href": "#"
+      },
+      {
+        "text": "pricing",
+        "href": "#"
+      },
+      {
+        "text": "contact",
+        "href": "#"
+      },
+      {
+        "type": "button",
+        "text": "login",
+        "href": "#"
+      }
+    ],
+    "socialMediaIcons": [
+      {
+        "name": "facebook",
+        "href": "#"
+      },
+      {
+        "name": "x",
+        "href": "#"
+      }
+    ]
+  }
+}
