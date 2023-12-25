@@ -84,7 +84,7 @@ const Header: React.FC = () => {
                 isMenuOpen ? "#FFF" : theme.palette.darkBlue.main,
               transition: isMenuOpen
                 ? "rotate 400ms ease-in-out 800ms, translate 400ms ease-in-out 400ms, top 400ms ease-in-out 200ms, background-color 400ms ease-in-out 400ms"
-                : "rotate 400ms ease-in-out, translate 400ms ease-in-out 400ms, top 400ms ease-in-out 200ms, background-color 400ms ease-in-out 1700ms",
+                : "rotate 400ms ease-in-out, translate 400ms ease-in-out 1700ms, top 400ms ease-in-out 1700ms, background-color 400ms ease-in-out 1700ms",
             }}
           />
 
@@ -112,7 +112,7 @@ const Header: React.FC = () => {
                 isMenuOpen ? "#FFF" : theme.palette.darkBlue.main,
               transition: isMenuOpen
                 ? "rotate 400ms ease-in-out 800ms, translate 400ms ease-in-out 400ms, bottom 400ms ease-in-out 200ms, background-color 400ms ease-in-out 400ms"
-                : "rotate 400ms ease-in-out, translate 400ms ease-in-out 400ms, bottom 400ms ease-in-out 200ms, background-color 400ms ease-in-out 1700ms",
+                : "rotate 400ms ease-in-out, translate 400ms ease-in-out 1700ms, bottom 400ms ease-in-out 1700ms, background-color 400ms ease-in-out 1700ms",
             }}
           />
         </Box>
