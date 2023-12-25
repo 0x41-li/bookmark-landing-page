@@ -1,20 +1,16 @@
-import { Box, Container, Link, Stack } from "@mui/material";
+import { Box, Container, Link, Stack, Theme } from "@mui/material";
 import { useState } from "react";
 import { useTheme } from "@emotion/react";
 
 // Assets
 import LogoSVG from "../assets/logo/LogoSVG";
 
-// Icons
-import FacebookIcon from "../assets/icons/FacebookIcon";
-import XIcon from "../assets/icons/XIcon";
-
 // Header Items
 import data from "../data/data.json";
 import SocialMediaIcon from "../components/SocialMediaIcon";
 
 const Header: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme() as Theme;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
