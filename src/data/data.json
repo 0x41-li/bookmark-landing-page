@@ -2,18 +2,22 @@
   "header": {
     "menu": [
       {
+        "type": "link",
         "text": "features",
         "href": "#"
       },
       {
+        "type": "link",
         "text": "pricing",
         "href": "#"
       },
       {
+        "type": "link",
         "text": "contact",
         "href": "#"
       },
       {
+        "type": "link",
         "type": "button",
         "text": "login",
         "href": "#"

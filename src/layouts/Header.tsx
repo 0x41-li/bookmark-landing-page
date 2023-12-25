@@ -19,7 +19,16 @@ const Header: React.FC = () => {
   const socialMediaIcons = header.socialMediaLinksAndIcons;
 
   return (
-    <Container sx={{ marginBlockStart: "40px" }} component="header">
+    <Container
+      sx={{
+        marginBlockStart: { xs: "40px", md: "48px" },
+        marginInline: "auto",
+        maxWidth: "1104px",
+      }}
+      maxWidth={false}
+      component="header"
+      disableGutters={true}
+    >
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         {/* Logo */}
         <Link
@@ -52,6 +61,10 @@ const Header: React.FC = () => {
         <Box
           component="button"
           sx={{
+            display: {
+              xs: "block",
+              md: "none",
+            },
             position: "relative",
             width: "18px",
             height: "15px",
@@ -116,11 +129,11 @@ const Header: React.FC = () => {
         {/* Menu and Social Media Modal + the dark blue background */}
         <Box
           sx={{
-            position: "absolute",
+            position: { xs: "absolute", md: "static" },
             top: isMenuOpen ? "0" : "-100vh",
             left: "0",
-            height: "100vh",
-            width: "100vw",
+            height: { xs: "100vh", md: "auto" },
+            width: { xs: "100vw", md: "auto" },
             transition: isMenuOpen
               ? "top 800ms ease-in-out 400ms"
               : "top 800ms ease-in-out 1200ms",
@@ -130,6 +143,7 @@ const Header: React.FC = () => {
           {/* background */}
           <Box
             sx={{
+              display: { xs: "block", md: "none" },
               position: "absolute",
               top: "0",
               left: "0",
@@ -145,28 +159,33 @@ const Header: React.FC = () => {
           {menu.length > 0 && (
             <Stack
               alignItems="center"
+              direction={{ xs: "column", md: "row" }}
+              spacing={{ xs: "", md: theme.spacing(11) }}
               sx={{
-                position: "absolute",
+                position: { xs: "absolute", md: "static" },
                 top: "105px",
                 width: "100%",
-                paddingInline: theme.spacing(8),
+                paddingInline: { xs: theme.spacing(8), md: "0" },
               }}
             >
               {menu.map((link, i) => {
-                if ("type" in link) {
+                if (link.type == "button") {
                   return (
                     <Link
                       key={link.text}
                       href={link.href}
-                      data-type="button"
                       sx={{
-                        marginBlockStart: theme.spacing(6),
-                        paddingBlock: theme.spacing(4),
+                        marginBlockStart: { xs: theme.spacing(6), md: "0" },
+                        paddingBlock: {
+                          xs: theme.spacing(4),
+                          md: theme.spacing(3),
+                        },
+                        paddingInline: { xs: "0", md: theme.spacing(8) },
                         width: "100%",
-                        border: "2px solid #FFF",
+                        border: { xs: "2px solid #FFF", md: "unset" },
                         borderRadius: "5px",
 
-                        fontSize: "1.25rem",
+                        fontSize: { xs: "1.25rem", md: "0.8125rem" },
                         lineHeight: "1.0625rem",
                         letterSpacing: "0.14rem",
                         fontWeight: "500",
@@ -175,7 +194,14 @@ const Header: React.FC = () => {
                         textDecorationLine: "none",
                         textTransform: "uppercase",
 
-                        opacity: isMenuOpen ? "1" : "0",
+                        opacity: { xs: isMenuOpen ? "1" : "0", md: "1" },
+
+                        background: {
+                          xs: "transparent",
+                          md: theme.palette.secondary.main,
+                        },
+
+                        boxShadow: "0 8px 8px -4px rgba(73, 93, 207, 0.20)",
 
                         transition: isMenuOpen
                           ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
@@ -196,20 +222,22 @@ const Header: React.FC = () => {
                     color="#FFF"
                     underline="none"
                     sx={{
-                      paddingBlockStart: theme.spacing(6),
-                      paddingBlockEnd: theme.spacing(6),
+                      paddingBlock: { xs: theme.spacing(6), md: "0" },
                       width: "100%",
-                      borderTop: "1px solid rgba(255, 255, 255, 0.15)",
+                      borderTop: {
+                        xs: "1px solid rgba(255, 255, 255, 0.15)",
+                        md: "unset",
+                      },
 
-                      fontSize: "1.25rem",
+                      fontSize: { xs: "1.25rem", md: "0.8125rem" },
                       lineHeight: "1.0625rem",
                       letterSpacing: "0.14rem",
                       textTransform: "uppercase",
                       textAlign: "center",
                       textDecorationLine: "none",
-                      color: "#FFF",
+                      color: { xs: "#FFF", md: theme.palette.darkBlue.main },
 
-                      opacity: isMenuOpen ? "1" : "0",
+                      opacity: { xs: isMenuOpen ? "1" : "0", md: "1" },
 
                       transition: isMenuOpen
                         ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
@@ -235,6 +263,10 @@ const Header: React.FC = () => {
               direction="row"
               spacing={10}
               sx={{
+                display: {
+                  xs: "flex",
+                  md: "none",
+                },
                 position: "absolute",
                 bottom: theme.spacing(12),
                 width: "100%",

@@ -22,10 +22,10 @@ function App() {
     breakpoints: {
       values: {
         xs: 0,
-        sm: 600,
-        md: 900,
-        lg: 1200,
-        xl: 1536,
+        sm: 425,
+        md: 768,
+        lg: 1024,
+        xl: 1440,
       },
     },
     palette: {
@@ -89,8 +89,18 @@ function App() {
       MuiContainer: {
         styleOverrides: {
           root: {
-            paddingInlineStart: "32px",
-            paddingInlineEnd: "32px",
+            "@media (max-width:1024px)": {
+              paddingInlineStart: "32px",
+              paddingInlineEnd: "32px",
+            },
+            "@media (min-width:1024px)": {
+              paddingInlineStart: "64px",
+              paddingInlineEnd: "64px",
+            },
+            "@media (min-width:1280px)": {
+              paddingInlineStart: "0",
+              paddingInlineEnd: "0",
+            },
           },
         },
       },
