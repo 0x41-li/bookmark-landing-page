@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   const header = data.header;
   const menu = header.menu;
-  const socialMediaIcons = header.socialMediaIcons;
+  const socialMediaIcons = header.socialMediaLinksAndIcons;
 
   return (
     <Container sx={{ marginBlockStart: "40px" }} component="header">
