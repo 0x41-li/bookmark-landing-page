@@ -178,11 +178,14 @@ const Header: React.FC = () => {
                         marginBlockStart: { xs: theme.spacing(6), md: "0" },
                         paddingBlock: {
                           xs: theme.spacing(4),
-                          md: theme.spacing(3),
+                          md: theme.spacing(2.5),
                         },
-                        paddingInline: { xs: "0", md: theme.spacing(8) },
+                        paddingInline: { xs: "0", md: theme.spacing(7.5) },
                         width: "100%",
-                        border: { xs: "2px solid #FFF", md: "unset" },
+                        border: {
+                          xs: "2px solid #FFF",
+                          md: "2px solid transparent",
+                        },
                         borderRadius: "5px",
 
                         fontSize: { xs: "1.25rem", md: "0.8125rem" },
@@ -207,7 +210,13 @@ const Header: React.FC = () => {
                           ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
                           : `opacity 400ms ease-in-out ${
                               1000 - (i + 2) * 100
-                            }ms`,
+                            }ms, background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out`,
+
+                        "&:hover": {
+                          backgroundColor: "transparent",
+                          border: `2px solid ${theme.palette.secondary.main}`,
+                          color: theme.palette.secondary.main,
+                        },
                       }}
                     >
                       {link.text}
@@ -241,7 +250,13 @@ const Header: React.FC = () => {
 
                       transition: isMenuOpen
                         ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
-                        : `opacity 400ms ease-in-out ${1000 - (i + 2) * 100}ms`,
+                        : `opacity 400ms ease-in-out ${
+                            1000 - (i + 2) * 100
+                          }ms, color 200ms ease-in-out`,
+
+                      "&:hover": {
+                        color: theme.palette.secondary.main,
+                      },
 
                       "&:nth-last-of-type(2)": {
                         borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
