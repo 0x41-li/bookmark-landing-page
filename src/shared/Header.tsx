@@ -25,16 +25,14 @@ const Header: React.FC = () => {
         marginInline: "auto",
         maxWidth: "1104px",
       }}
-      maxWidth={false}
       component="header"
-      disableGutters={true}
     >
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         {/* Logo */}
         <Link
           href="/"
           aria-label="Logo of the website"
-          sx={{ position: "relative", display: "flex", zIndex: "9" }}
+          sx={{ position: "relative", display: "flex", zIndex: "999" }}
         >
           <LogoSVG
             aria-hidden
@@ -65,14 +63,19 @@ const Header: React.FC = () => {
               xs: "block",
               md: "none",
             },
+
             position: "relative",
             width: "18px",
             height: "15px",
-            backgroundColor: "transparent",
             border: "none",
             padding: "0px",
+
+            backgroundColor: "transparent",
+
             cursor: "pointer",
-            zIndex: "9",
+
+            zIndex: "999",
+
             "& > *": {
               position: "absolute",
               left: "0",
@@ -137,7 +140,7 @@ const Header: React.FC = () => {
             transition: isMenuOpen
               ? "top 800ms ease-in-out 400ms"
               : "top 800ms ease-in-out 1200ms",
-            zIndex: "8",
+            zIndex: "990",
           }}
         >
           {/* background */}
@@ -235,7 +238,7 @@ const Header: React.FC = () => {
                       width: "100%",
                       borderTop: {
                         xs: "1px solid rgba(255, 255, 255, 0.15)",
-                        md: "unset",
+                        md: "none",
                       },
 
                       fontSize: { xs: "1.25rem", md: "0.8125rem" },
