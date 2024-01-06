@@ -117,14 +117,7 @@ function App() {
           font-display: swap;
           font-weight: 500;
           src: local('Rubik'), local('Rubik-Medium'), url(${RubikMedium}) format('truetype');
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          display: block;
-        }
-        `,
+        }`,
       },
 
       MuiContainer: {
@@ -179,12 +172,25 @@ function App() {
 
           contained: {
             boxShadow: `0px 8px 8px -4px rgba(73, 93, 207, 0.20)`,
+            border: "2px solid transparent",
+            "&:hover": {
+              backgroundColor: "white",
+              border: `2px solid ${colors.primary}`,
+
+              color: colors.primary,
+            },
           },
 
           outlined: {
             color: alpha(colors.darkBlue, 0.75),
             backgroundColor: "#F7F7F7",
             boxShadow: "0px 8px 8px -4px rgba(73, 93, 207, 0.20)",
+
+            border: "2px solid transparent",
+            "&:hover": {
+              backgroundColor: "white",
+              border: `2px solid ${alpha(colors.darkBlue, 0.75)}`,
+            },
           },
         },
       },
