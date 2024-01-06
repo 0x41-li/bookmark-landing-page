@@ -167,6 +167,10 @@ function App() {
             paddingInline: "16px",
             paddingBlock: "10px",
 
+            "@media (min-width:1024px)": {
+              paddingInline: "24px",
+            },
+
             border: "none",
             "&:hover": {
               border: "none",

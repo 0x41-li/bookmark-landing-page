@@ -25,10 +25,10 @@ const Hero = () => {
         spacing={{ xs: theme.spacing(24), md: theme.spacing(17) }}
         direction={{ xs: "column", md: "row-reverse" }}
       >
+        {/* Hero Illustration */}
         <Box
           sx={{
             position: "relative",
-
             flex: {
               md: "1",
             },
@@ -52,14 +52,28 @@ const Hero = () => {
           <Box
             sx={{
               position: "absolute",
-              top: { xs: "13.866666666666667vw", sm: "80px" },
+              top: { xs: "13vw", sm: "90px", xl: "135px" },
               right: {
                 xs: theme.spacing(-8),
                 lg: theme.spacing(-16),
-                xl: `-18vw`,
+                [theme.breakpoints.between(1104, 1280)]: {
+                  right: `calc( ((100vw - 1104px) / -2) - ${theme.spacing(
+                    16
+                  )})`,
+                },
+                xl: "calc((100vw - 1104px ) / -2)",
               },
-              width: { xs: "81.4vw", sm: "60vw", md: "30vw" },
-              height: "203px",
+              width: {
+                xs: "81.4vw",
+                sm: "70vw",
+                md: "30vw",
+                xl: "35.8vw",
+                [theme.breakpoints.up(1980)]: {
+                  width: "42vw",
+                },
+              },
+              height: { xs: "203px", xl: "24.4vw" },
+              maxHeight: "400px",
 
               borderBottomLeftRadius: "316px",
               borderTopLeftRadius: "316px",
@@ -69,12 +83,13 @@ const Hero = () => {
           />
         </Box>
 
+        {/* Hero Text */}
         <Box
           sx={{
             marginBlockStart: {
               md: theme.spacing(4),
               lg: theme.spacing(8),
-              xl: theme.spacing(17),
+              xl: theme.spacing(18),
             },
             flex: {
               md: "1",
@@ -82,22 +97,29 @@ const Hero = () => {
             },
           }}
         >
+          {/* h1 */}
           <Typography variant="h1" textAlign={{ xs: "center", md: "left" }}>
             A Simple Bookmark Manager
           </Typography>
+
+          {/* p */}
           <Typography
             variant="body1"
             textAlign={{ xs: "center", md: "left" }}
-            sx={{ marginBlockStart: theme.spacing(4) }}
+            sx={{
+              marginBlockStart: { sm: theme.spacing(4), xl: theme.spacing(6) },
+            }}
           >
             A clean and simple interface to organize your favourite websites.
             Open a new browser tab and see your sites load instantly. Try it for
             free.
           </Typography>
+
+          {/* The two Buttons */}
           <Stack
             direction="row"
             justifyContent={{ xs: "center", md: "flex-start" }}
-            spacing={theme.spacing(3)}
+            spacing={{ xs: theme.spacing(3), xl: theme.spacing(4) }}
             sx={{ marginBlockStart: theme.spacing(8) }}
           >
             <Button variant="contained">Get it on Chrome</Button>

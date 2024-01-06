@@ -10,8 +10,8 @@
   margin-inline: auto;
 
   @media screen and (min-width: 1280px) {
-    max-width: 100%;
     width: 100%;
+    max-width: 574px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -19,14 +19,12 @@
     left: 0;
     top: 0;
     width: 574px;
-    max-width: 574px;
   }
 }
 
 /* 
- ! The sahow is applied but there's the white backgroud behinf the illustration
- ! it looks bad, using filter, ad drop-shadow didn't fix the issue
-
+ ! The shadow is applied but there's the white backgroud behinf the illustration
+ ! it looks bad, using filter, ad drop-shadow didn't fix the issue 
 */
 .hero-sec__img {
   box-shadow: 0px 30px 40px 0px rgba(47, 59, 129, 0.2);
