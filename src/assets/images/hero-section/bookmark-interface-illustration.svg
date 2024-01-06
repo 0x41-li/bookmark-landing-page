@@ -1,42 +1,44 @@
-<svg width="575" height="383" viewBox="0 0 575 383" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.500061" y="0.5" width="574.23" height="381.865" rx="25" fill="url(#paint0_linear_0_1343)"/>
-<rect opacity="0.1" x="52.5305" y="14.8029" width="471.463" height="353.756" rx="5" fill="#2A2A2A"/>
-<rect x="19.5305" y="17.8029" width="536" height="346" rx="8" fill="#E8EAF6"/>
-<mask id="mask0_0_1343" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="19" y="17" width="537" height="347">
-<rect x="19.5305" y="17.8029" width="536" height="346" rx="8" fill="white"/>
-</mask>
-<g mask="url(#mask0_0_1343)">
-<rect x="16.0001" y="18" width="547" height="59" fill="#5267DF"/>
-<circle opacity="0.244768" cx="58.0001" cy="48" r="16" fill="white"/>
-<circle opacity="0.104399" cx="519" cy="48" r="16" fill="white"/>
-<rect opacity="0.75" x="89.0001" y="38" width="120" height="6" rx="3" fill="white"/>
-<rect opacity="0.25" x="89.0001" y="52" width="64" height="6" rx="3" fill="white"/>
-<rect x="76.5305" y="110.803" width="261" height="316" rx="8" fill="white"/>
-<rect x="371.531" y="110.803" width="128" height="316" rx="8" fill="white"/>
-<rect opacity="0.5" x="155" y="149" width="120" height="6" rx="3" fill="#242A45"/>
-</g>
-<circle cx="124" cy="159" r="16" fill="#F98E5D"/>
-<rect opacity="0.25" x="392" y="133" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="392" y="153" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="392" y="173" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="392" y="193" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="392" y="227" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="392" y="247" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="392" y="267" width="88" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="155" y="163" width="64" height="6" rx="3" fill="#242A45"/>
-<circle cx="124" cy="215" r="16" fill="#6AC6D6"/>
-<rect opacity="0.5" x="155" y="205" width="120" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="155" y="219" width="64" height="6" rx="3" fill="#242A45"/>
-<circle cx="124" cy="271" r="16" fill="#A47ED4"/>
-<rect opacity="0.5" x="155" y="261" width="120" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="155" y="275" width="64" height="6" rx="3" fill="#242A45"/>
-<circle cx="124" cy="327" r="16" fill="#EC7878"/>
-<rect opacity="0.5" x="155" y="317" width="120" height="6" rx="3" fill="#242A45"/>
-<rect opacity="0.25" x="155" y="331" width="64" height="6" rx="3" fill="#242A45"/>
-<defs>
-<linearGradient id="paint0_linear_0_1343" x1="846.042" y1="194.406" x2="506.325" y2="-316.444" gradientUnits="userSpaceOnUse">
-<stop stop-color="#151515"/>
-<stop offset="1" stop-color="#3D3D3D"/>
-</linearGradient>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="575" height="383" fill="none">
+    <rect width="574.23" height="381.865" x=".5" y=".5" fill="url(#a)" rx="25" />
+    <rect width="471.463" height="353.756" x="52.531" y="14.803" fill="#2A2A2A" opacity=".1" rx="5" />
+    <rect width="536" height="346" x="19.53" y="17.803" fill="#E8EAF6" rx="8" />
+    <mask id="b" width="537" height="347" x="19" y="17" maskUnits="userSpaceOnUse"
+        style="mask-type:luminance">
+        <rect width="536" height="346" x="19.53" y="17.803" fill="#fff" rx="8" />
+    </mask>
+    <g mask="url(#b)">
+        <path fill="#5267DF" d="M16 18h547v59H16z" />
+        <circle cx="58" cy="48" r="16" fill="#fff" opacity=".245" />
+        <circle cx="519" cy="48" r="16" fill="#fff" opacity=".104" />
+        <rect width="120" height="6" x="89" y="38" fill="#fff" opacity=".75" rx="3" />
+        <rect width="64" height="6" x="89" y="52" fill="#fff" opacity=".25" rx="3" />
+        <rect width="261" height="316" x="76.531" y="110.803" fill="#fff" rx="8" />
+        <rect width="128" height="316" x="371.531" y="110.803" fill="#fff" rx="8" />
+        <rect width="120" height="6" x="155" y="149" fill="#242A45" opacity=".5" rx="3" />
+    </g>
+    <circle cx="124" cy="159" r="16" fill="#F98E5D" />
+    <rect width="88" height="6" x="392" y="133" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="88" height="6" x="392" y="153" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="88" height="6" x="392" y="173" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="88" height="6" x="392" y="193" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="88" height="6" x="392" y="227" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="88" height="6" x="392" y="247" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="88" height="6" x="392" y="267" fill="#242A45" opacity=".25" rx="3" />
+    <rect width="64" height="6" x="155" y="163" fill="#242A45" opacity=".25" rx="3" />
+    <circle cx="124" cy="215" r="16" fill="#6AC6D6" />
+    <rect width="120" height="6" x="155" y="205" fill="#242A45" opacity=".5" rx="3" />
+    <rect width="64" height="6" x="155" y="219" fill="#242A45" opacity=".25" rx="3" />
+    <circle cx="124" cy="271" r="16" fill="#A47ED4" />
+    <rect width="120" height="6" x="155" y="261" fill="#242A45" opacity=".5" rx="3" />
+    <rect width="64" height="6" x="155" y="275" fill="#242A45" opacity=".25" rx="3" />
+    <circle cx="124" cy="327" r="16" fill="#EC7878" />
+    <rect width="120" height="6" x="155" y="317" fill="#242A45" opacity=".5" rx="3" />
+    <rect width="64" height="6" x="155" y="331" fill="#242A45" opacity=".25" rx="3" />
+    <defs>
+        <linearGradient id="a" x1="846.042" x2="506.325" y1="194.406" y2="-316.444"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#151515" />
+            <stop offset="1" stop-color="#3D3D3D" />
+        </linearGradient>
+    </defs>
 </svg>

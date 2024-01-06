@@ -22,10 +22,7 @@
   }
 }
 
-/* 
- ! The shadow is applied but there's the white backgroud behinf the illustration
- ! it looks bad, using filter, ad drop-shadow didn't fix the issue 
-*/
 .hero-sec__img {
   box-shadow: 0px 30px 40px 0px rgba(47, 59, 129, 0.2);
+  border-radius: 25px;
 }
