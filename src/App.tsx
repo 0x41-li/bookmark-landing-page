@@ -1,4 +1,10 @@
-import { CssBaseline, ThemeProvider, alpha, createTheme } from "@mui/material";
+import {
+  Box,
+  CssBaseline,
+  ThemeProvider,
+  alpha,
+  createTheme,
+} from "@mui/material";
 
 import "./sass/app.scss";
 
@@ -9,6 +15,7 @@ import Hero from "./Hero.tsx";
 // fonts
 import RubikRegular from "./assets/fonts/Rubik/static/Rubik-Regular.ttf";
 import RubikMedium from "./assets/fonts/Rubik/static/Rubik-Medium.ttf";
+import { useEffect, useState } from "react";
 
 declare module "@mui/material/styles" {
   interface Palette {
@@ -199,10 +206,23 @@ function App() {
     spacing: 4,
   });
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // prevent scrolling when menu open on mobile devices
+  // ! Overflow hidden will not be removed if the menu was open in a small size device, and the device size changed to a tablet+ size, this can be done using dev tool, or rotating
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Hero />
     </ThemeProvider>
   );

@@ -1,5 +1,4 @@
 import { Box, Container, Link, Stack, Theme } from "@mui/material";
-import { useState } from "react";
 import { useTheme } from "@emotion/react";
 
 // Assets
@@ -9,10 +8,13 @@ import LogoSVG from "../assets/logo/LogoSVG";
 import data from "../data/data.json";
 import SocialMediaIcon from "../components/SocialMediaIcon";
 
-const Header: React.FC = () => {
-  const theme = useTheme() as Theme;
+type HeaderProps = {
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+  const theme = useTheme() as Theme;
 
   const header = data.header;
   const menu = header.menu;
@@ -129,10 +131,10 @@ const Header: React.FC = () => {
           />
         </Box>
 
-        {/* Menu and Social Media Modal + the dark blue background */}
+        {/* Menu Modal + the dark blue background */}
         <Box
           sx={{
-            position: { xs: "absolute", md: "static" },
+            position: { xs: "fixed", md: "static" },
             top: isMenuOpen ? "0" : "-100vh",
             left: "0",
             height: { xs: "100vh", md: "auto" },
