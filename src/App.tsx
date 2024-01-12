@@ -1,10 +1,4 @@
-import {
-  Box,
-  CssBaseline,
-  ThemeProvider,
-  alpha,
-  createTheme,
-} from "@mui/material";
+import { CssBaseline, ThemeProvider, alpha, createTheme } from "@mui/material";
 
 import "./sass/app.scss";
 
@@ -161,7 +155,6 @@ function App() {
         styleOverrides: {
           root: {
             fontSize: "0.875rem",
-            letterSpacing: "0.0156rem",
             textTransform: "capitalize",
 
             paddingInline: "16px",

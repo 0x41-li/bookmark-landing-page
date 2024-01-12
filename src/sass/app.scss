@@ -20,15 +20,14 @@
     top: 0;
     width: 574px;
   }
-}
 
-.hero-sec__img {
-  box-shadow: 0px 30px 40px 0px rgba(47, 59, 129, 0.2);
-  border-radius: 5%;
-}
+  .hero-sec__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    box-shadow: 0px 30px 40px 0px rgba(47, 59, 129, 0.2);
+    border-radius: 5%;
+  }
 }

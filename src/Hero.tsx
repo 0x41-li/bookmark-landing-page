@@ -10,6 +10,8 @@ import {
 
 // hero section images
 import bookmarkInterfaceIllustrationSvg from "./assets/images/hero-section/bookmark-interface-illustration.svg";
+import bookmarkInterfaceIllustration309wPNG from "./assets/images/hero-section/bookmark-interface-illustration-309w.png";
+import bookmarkInterfaceIllustration575wPNG from "./assets/images/hero-section/bookmark-interface-illustration-575w.png";
 
 const Hero = () => {
   const theme = useTheme() as Theme;
@@ -36,19 +38,21 @@ const Hero = () => {
         >
           {/* TODO: add AVIF, WEBP formats with resposive images */}
           <picture className="hero-sec__picture">
-            <source
+            {/* <source
               type="image/svg+xml"
               srcSet={bookmarkInterfaceIllustrationSvg}
-            />
+            /> */}
 
-            {/* TODO: add PNG format with responsive images */}
             <img
               className="hero-sec__img"
-              src={bookmarkInterfaceIllustrationSvg}
-              alt=""
+              srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
+              src={bookmarkInterfaceIllustration575wPNG}
+              sizes="(max-width: 425px) 304px, 574px"
+              alt="Bookmark web interface illustration"
             />
           </picture>
 
+          {/* blue background behind the illustration */}
           <Box
             sx={{
               position: "absolute",
@@ -69,7 +73,7 @@ const Hero = () => {
                 md: "30vw",
                 xl: "35.8vw",
                 [theme.breakpoints.up(1980)]: {
-                  width: "42vw",
+                  display: "none",
                 },
               },
               height: { xs: "203px", xl: "24.4vw" },
