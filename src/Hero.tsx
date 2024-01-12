@@ -8,10 +8,23 @@ import {
   Typography,
 } from "@mui/material";
 
-// hero section images
+// ---- hero images import ----
+// SVG
 import bookmarkInterfaceIllustrationSvg from "./assets/images/hero-section/bookmark-interface-illustration.svg";
+
+// PNG
 import bookmarkInterfaceIllustration309wPNG from "./assets/images/hero-section/bookmark-interface-illustration-309w.png";
 import bookmarkInterfaceIllustration575wPNG from "./assets/images/hero-section/bookmark-interface-illustration-575w.png";
+
+// WEBP
+import bookmarkInterfaceIllustration309wWEBP from "./assets/images/hero-section/bookmark-interface-illustration-309w.webp";
+import bookmarkInterfaceIllustration575wWEBP from "./assets/images/hero-section/bookmark-interface-illustration-575w.webp";
+
+// AVIF
+import bookmarkInterfaceIllustration309wAVIF from "./assets/images/hero-section/bookmark-interface-illustration-309w.avif";
+import bookmarkInterfaceIllustration575wAVIF from "./assets/images/hero-section/bookmark-interface-illustration-575w.avif";
+
+// ---- hero images import ----
 
 const Hero = () => {
   const theme = useTheme() as Theme;
@@ -36,18 +49,33 @@ const Hero = () => {
             },
           }}
         >
-          {/* TODO: add AVIF, WEBP formats with resposive images */}
           <picture className="hero-sec__picture">
-            {/* <source
+            {/* SVG */}
+            <source
               type="image/svg+xml"
               srcSet={bookmarkInterfaceIllustrationSvg}
-            /> */}
+            />
 
+            {/* AVIF format */}
+            <source
+              type="image/avif"
+              srcSet={`${bookmarkInterfaceIllustration309wAVIF} 309w, ${bookmarkInterfaceIllustration575wAVIF} 575w`}
+              sizes="(max-width: 425px) 308px, 574px"
+            />
+
+            {/* WEBP format */}
+            <source
+              type="image/webp"
+              srcSet={`${bookmarkInterfaceIllustration309wWEBP} 309w, ${bookmarkInterfaceIllustration575wWEBP} 575w`}
+              sizes="(max-width: 425px) 308px, 574px"
+            />
+
+            {/* PNG format */}
             <img
               className="hero-sec__img"
               srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
               src={bookmarkInterfaceIllustration575wPNG}
-              sizes="(max-width: 425px) 304px, 574px"
+              sizes="(max-width: 425px) 308px, 574px"
               alt="Bookmark web interface illustration"
             />
           </picture>
