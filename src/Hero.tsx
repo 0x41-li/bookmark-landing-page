@@ -139,7 +139,7 @@ const Hero = () => {
             variant="body1"
             textAlign={{ xs: "center", md: "left" }}
             sx={{
-              marginBlockStart: { sm: theme.spacing(4), xl: theme.spacing(6) },
+              marginBlockStart: { xs: theme.spacing(4), xl: theme.spacing(6) },
             }}
           >
             A clean and simple interface to organize your favourite websites.
