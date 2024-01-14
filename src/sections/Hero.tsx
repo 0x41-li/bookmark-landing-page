@@ -10,19 +10,19 @@ import {
 
 // ---- hero images import ----
 // SVG
-import bookmarkInterfaceIllustrationSvg from "./assets/images/hero-section/bookmark-interface-illustration.svg";
+import bookmarkInterfaceIllustrationSvg from "../assets/images/hero-section/bookmark-interface-illustration.svg";
 
 // PNG
-import bookmarkInterfaceIllustration309wPNG from "./assets/images/hero-section/bookmark-interface-illustration-309w.png";
-import bookmarkInterfaceIllustration575wPNG from "./assets/images/hero-section/bookmark-interface-illustration-575w.png";
+import bookmarkInterfaceIllustration309wPNG from "../assets/images/hero-section/bookmark-interface-illustration-309w.png";
+import bookmarkInterfaceIllustration575wPNG from "../assets/images/hero-section/bookmark-interface-illustration-575w.png";
 
 // WEBP
-import bookmarkInterfaceIllustration309wWEBP from "./assets/images/hero-section/bookmark-interface-illustration-309w.webp";
-import bookmarkInterfaceIllustration575wWEBP from "./assets/images/hero-section/bookmark-interface-illustration-575w.webp";
+import bookmarkInterfaceIllustration309wWEBP from "../assets/images/hero-section/bookmark-interface-illustration-309w.webp";
+import bookmarkInterfaceIllustration575wWEBP from "../assets/images/hero-section/bookmark-interface-illustration-575w.webp";
 
 // AVIF
-import bookmarkInterfaceIllustration309wAVIF from "./assets/images/hero-section/bookmark-interface-illustration-309w.avif";
-import bookmarkInterfaceIllustration575wAVIF from "./assets/images/hero-section/bookmark-interface-illustration-575w.avif";
+import bookmarkInterfaceIllustration309wAVIF from "../assets/images/hero-section/bookmark-interface-illustration-309w.avif";
+import bookmarkInterfaceIllustration575wAVIF from "../assets/images/hero-section/bookmark-interface-illustration-575w.avif";
 
 // ---- hero images import ----
 

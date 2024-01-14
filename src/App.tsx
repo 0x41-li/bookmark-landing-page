@@ -4,24 +4,13 @@ import "./sass/app.scss";
 
 // Website parts
 import Header from "./shared/Header.tsx";
-import Hero from "./Hero.tsx";
+import Hero from "./sections/Hero.tsx";
+import Features from "./sections/Features.tsx";
 
 // fonts
 import RubikRegular from "./assets/fonts/Rubik/static/Rubik-Regular.ttf";
 import RubikMedium from "./assets/fonts/Rubik/static/Rubik-Medium.ttf";
 import { useEffect, useState } from "react";
-
-declare module "@mui/material/styles" {
-  interface Palette {
-    darkBlue: Palette["primary"];
-    gray: Palette["primary"];
-  }
-
-  interface PaletteOptions {
-    darkBlue?: PaletteOptions["primary"];
-    gray: PaletteOptions["primary"];
-  }
-}
 
 const colors = {
   primary: "#5267DF",
@@ -217,6 +206,7 @@ function App() {
       <CssBaseline />
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Hero />
+      <Features />
     </ThemeProvider>
   );
 }

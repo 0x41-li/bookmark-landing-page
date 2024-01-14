@@ -17,7 +17,6 @@
         "href": "#"
       },
       {
-        "type": "link",
         "type": "button",
         "text": "login",
         "href": "#"
@@ -33,5 +32,11 @@
         "href": "#"
       }
     ]
+  },
+  "hero": {
+    "heading": "A Simple Bookmark Manager",
+    "subheading": "A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.",
+    "CTA": "Get it on Chrome",
+    "ghostButton": "Get it on Firefox"
   }
 }
