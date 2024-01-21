@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Rubik"), local("Rubik-Regular"),
+    url("/assets/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("Rubik"), local("Rubik-Medium"),
+    url("/assets/fonts/Rubik/Rubik-Medium.ttf") format("truetype");
+}
+
+body {
+  height: 8000px;
+}
+
+img {
+  max-width: 100%;
+}
+
 // Hero section
 .hero-sec__picture {
   position: relative;
@@ -21,13 +47,22 @@
     width: 574px;
   }
 
-  .hero-sec__img {
+  img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
+    margin-inline: auto;
 
     box-shadow: 0px 30px 40px 0px rgba(47, 59, 129, 0.2);
     border-radius: 5%;
+  }
+}
+
+// Features section
+.features-sec__picture {
+  img {
+    display: block;
+    max-width: 311px;
+    margin-inline: auto;
   }
 }

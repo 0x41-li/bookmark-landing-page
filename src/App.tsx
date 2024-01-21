@@ -1,5 +1,8 @@
-import { CssBaseline, ThemeProvider, alpha, createTheme } from "@mui/material";
+import { ThemeProvider, alpha, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { useEffect, useState } from "react";
 
+// sass
 import "./sass/app.scss";
 
 // Website parts
@@ -7,10 +10,19 @@ import Header from "./shared/Header.tsx";
 import Hero from "./sections/Hero.tsx";
 import Features from "./sections/Features.tsx";
 
-// fonts
-import RubikRegular from "./assets/fonts/Rubik/static/Rubik-Regular.ttf";
-import RubikMedium from "./assets/fonts/Rubik/static/Rubik-Medium.ttf";
-import { useEffect, useState } from "react";
+// Mui module extension
+// ! I tried to put in another file, but I faced a lot of issues
+declare module "@mui/material/styles" {
+  interface Palette {
+    darkBlue: Palette["primary"];
+    gray: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    darkBlue?: PaletteOptions["primary"];
+    gray: PaletteOptions["primary"];
+  }
+}
 
 const colors = {
   primary: "#5267DF",
@@ -66,8 +78,8 @@ function App() {
       },
 
       h2: {
-        fontSize: "1.5reem",
-        lineHeight: "2.5rem",
+        fontSize: "1.5rem",
+        lineHeight: "3.25rem",
         fontWeight: 500,
         color: colors.darkBlue,
 
@@ -91,25 +103,6 @@ function App() {
     },
 
     components: {
-      MuiCssBaseline: {
-        styleOverrides: `
-        @font-face {
-          font-family: 'Rubik';
-          font-style: normal;
-          font-display: swap;
-          font-weight: 400;
-          src: local('Rubik'), local('Rubik-Regular'), url(${RubikRegular}) format('truetype');
-        }
-
-        @font-face {
-          font-family: 'Rubik';
-          font-style: normal;
-          font-display: swap;
-          font-weight: 500;
-          src: local('Rubik'), local('Rubik-Medium'), url(${RubikMedium}) format('truetype');
-        }`,
-      },
-
       MuiContainer: {
         defaultProps: {
           maxWidth: false,

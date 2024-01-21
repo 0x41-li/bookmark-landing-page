@@ -23,11 +23,15 @@ import bookmarkInterfaceIllustration575wWEBP from "../assets/images/hero-section
 // AVIF
 import bookmarkInterfaceIllustration309wAVIF from "../assets/images/hero-section/bookmark-interface-illustration-309w.avif";
 import bookmarkInterfaceIllustration575wAVIF from "../assets/images/hero-section/bookmark-interface-illustration-575w.avif";
-
 // ---- hero images import ----
+
+// hero data
+import data from "../data/data.json";
 
 const Hero = () => {
   const theme = useTheme() as Theme;
+
+  const heroData = data.hero;
   return (
     <Container
       sx={{
@@ -72,7 +76,6 @@ const Hero = () => {
 
             {/* PNG format */}
             <img
-              className="hero-sec__img"
               srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
               src={bookmarkInterfaceIllustration575wPNG}
               sizes="(max-width: 425px) 308px, 574px"
@@ -131,7 +134,7 @@ const Hero = () => {
         >
           {/* h1 */}
           <Typography variant="h1" textAlign={{ xs: "center", md: "left" }}>
-            A Simple Bookmark Manager
+            {heroData.heading}
           </Typography>
 
           {/* p */}
@@ -142,9 +145,7 @@ const Hero = () => {
               marginBlockStart: { xs: theme.spacing(4), xl: theme.spacing(6) },
             }}
           >
-            A clean and simple interface to organize your favourite websites.
-            Open a new browser tab and see your sites load instantly. Try it for
-            free.
+            {heroData.subheading}
           </Typography>
 
           {/* The two Buttons */}
@@ -154,8 +155,8 @@ const Hero = () => {
             spacing={{ xs: theme.spacing(3), xl: theme.spacing(4) }}
             sx={{ marginBlockStart: theme.spacing(8) }}
           >
-            <Button variant="contained">Get it on Chrome</Button>
-            <Button variant="outlined">Get it on Firefox</Button>
+            <Button variant="contained">{heroData.CTA}</Button>
+            <Button variant="outlined">{heroData.ghostButton}</Button>
           </Stack>
         </Box>
       </Stack>
