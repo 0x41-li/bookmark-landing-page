@@ -9,6 +9,7 @@ import {
   Theme,
   Typography,
   alpha,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
@@ -22,6 +23,8 @@ const Features = () => {
   const theme = useTheme() as Theme;
 
   const [tabsIndex, setTabsIndex] = useState(0);
+
+  const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Container sx={{ marginBlockStart: theme.spacing(35) }}>
@@ -42,29 +45,36 @@ const Features = () => {
         <Tabs
           value={tabsIndex}
           onChange={(_, i) => setTabsIndex(i)}
-          orientation="vertical"
+          orientation={IsMobile ? "vertical" : "horizontal"}
           textColor="inherit"
           indicatorColor="secondary"
           TabIndicatorProps={{
             style: {
-              top: `${58 * (tabsIndex + 1) - 4}px`,
+              top: IsMobile ? `${58 * (tabsIndex + 1) - 4}px` : "",
               height: "4px",
-              width: "143px",
-              left: "50%",
-              translate: "-50% 0",
+              width: IsMobile ? "143px" : "240px",
+              left: IsMobile ? "50%" : `${234 * tabsIndex}px`,
+              translate: IsMobile ? "-50% 0" : "",
             },
           }}
           sx={{
+            maxWidth: "730px",
+            marginInline: "auto",
+            borderBottom: IsMobile ? "unset" : "1px solid rgba(0, 0, 0, 0.12)",
             "& .MuiTab-root": {
               color: alpha(theme.palette.darkBlue.main, 0.75),
               fontWeight: 400,
               textTransform: "capitalize",
               height: "57px",
               maxWidth: "unset",
+              flex: IsMobile ? "0 0 1" : "1",
             },
             "& .Mui-selected": {
               color: theme.palette.darkBlue.main,
               fontWeight: 400,
+            },
+            "& .MuiDivider-root": {
+              display: { md: "none" },
             },
           }}
         >
@@ -88,25 +98,28 @@ const Features = () => {
               translate: `calc(-${tabsIndex * 100}% - ${tabsIndex * 32}px) 0%`,
               "&>*": { flex: "0 0 100%" },
               transition: "translate 400ms ease-in-out",
+              paddingBlockEnd: { md: theme.spacing(8) },
             }}
             flexDirection="row"
             gap={theme.spacing(8)}
           >
-            <Box
+            <Stack
               sx={{
                 position: "relative",
-                flex: "0 0 100%",
 
                 marginBlockStart: theme.spacing(18),
                 paddingInline: theme.spacing(8),
               }}
+              gap={{ xs: theme.spacing(17.25) }}
+              flexDirection={{ md: "row" }}
+              alignItems={{ md: "flex-start" }}
             >
               {/* blue background behind the illustration */}
               <Box
                 sx={{
                   position: "absolute",
 
-                  top: { xs: "9vw" },
+                  top: { xs: "9vw", md: "5vw" },
 
                   left: {
                     xs: 0,
@@ -115,8 +128,7 @@ const Features = () => {
 
                   width: {
                     xs: "81.4vw",
-                    sm: "70vw",
-                    md: "30vw",
+                    md: "40vw",
                     xl: "35.8vw",
                     [theme.breakpoints.up(1980)]: {
                       display: "none",
@@ -170,14 +182,19 @@ const Features = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  alignItems: "center",
-                  marginBlockStart: theme.spacing(17.25),
+                  alignItems: { xs: "center", md: "flex-start" },
                 }}
               >
-                <Typography variant="h2" textAlign={{ xs: "center" }}>
+                <Typography
+                  variant="h2"
+                  textAlign={{ xs: "center", md: "left" }}
+                >
                   Bookmark in one click
                 </Typography>
-                <Typography variant="body1" textAlign={{ xs: "center" }}>
+                <Typography
+                  variant="body1"
+                  textAlign={{ xs: "center", md: "left" }}
+                >
                   Organize your bookmarks however you like. Our simple
                   drag-and-drop interface gives you complete control over how
                   you manage your favourite sites.
@@ -193,36 +210,31 @@ const Features = () => {
                   More Info
                 </Button>
               </Box>
-            </Box>
+            </Stack>
 
-            <Box
+            <Stack
               sx={{
                 position: "relative",
-                flex: {
-                  md: "1",
-                },
 
                 marginBlockStart: theme.spacing(18),
+                paddingInline: theme.spacing(8),
               }}
+              gap={{ xs: theme.spacing(17.25) }}
+              flexDirection={{ md: "row" }}
+              alignItems={{ md: "flex-start" }}
             >
               {/* blue background behind the illustration */}
               <Box
                 sx={{
                   position: "absolute",
-                  top: { xs: "22vw", sm: "90px", xl: "135px" },
+                  top: { xs: "22vw", md: "12vw" },
                   left: {
+                    xs: 0,
                     lg: theme.spacing(-16),
-                    [theme.breakpoints.between(1104, 1280)]: {
-                      left: `calc( ((100vw - 1104px) / -2) - ${theme.spacing(
-                        16
-                      )})`,
-                    },
-                    xl: "calc((100vw - 1104px ) / -2)",
                   },
                   width: {
                     xs: "81.4vw",
-                    sm: "70vw",
-                    md: "30vw",
+                    md: "34vw",
                     xl: "35.8vw",
                     [theme.breakpoints.up(1980)]: {
                       display: "none",
@@ -275,17 +287,22 @@ const Features = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  alignItems: "center",
-                  marginBlockStart: theme.spacing(17.25),
+                  alignItems: { xs: "center", md: "flex-start" },
                 }}
               >
-                <Typography variant="h2" textAlign={{ xs: "center" }}>
-                  Bookmark in one click
+                <Typography
+                  variant="h2"
+                  textAlign={{ xs: "center", md: "left" }}
+                >
+                  Intelligent search
                 </Typography>
-                <Typography variant="body1" textAlign={{ xs: "center" }}>
-                  Organize your bookmarks however you like. Our simple
-                  drag-and-drop interface gives you complete control over how
-                  you manage your favourite sites.
+                <Typography
+                  variant="body1"
+                  textAlign={{ xs: "center", md: "left" }}
+                >
+                  Our powerful search feature will help you find saved sites in
+                  no time at all. No need to trawl through all of your
+                  bookmarks.
                 </Typography>
                 <Button
                   variant="contained"
@@ -298,17 +315,18 @@ const Features = () => {
                   More Info
                 </Button>
               </Box>
-            </Box>
+            </Stack>
 
-            <Box
+            <Stack
               sx={{
                 position: "relative",
-                flex: {
-                  md: "1",
-                },
 
                 marginBlockStart: theme.spacing(18),
+                paddingInline: theme.spacing(8),
               }}
+              gap={{ xs: theme.spacing(17.25) }}
+              flexDirection={{ md: "row" }}
+              alignItems={{ md: "flex-start" }}
             >
               {/* blue background behind the illustration */}
               <Box
@@ -316,18 +334,12 @@ const Features = () => {
                   position: "absolute",
                   top: { xs: "24vw", sm: "90px", xl: "135px" },
                   left: {
+                    xs: 0,
                     lg: theme.spacing(-16),
-                    [theme.breakpoints.between(1104, 1280)]: {
-                      left: `calc( ((100vw - 1104px) / -2) - ${theme.spacing(
-                        16
-                      )})`,
-                    },
-                    xl: "calc((100vw - 1104px ) / -2)",
                   },
                   width: {
                     xs: "81.4vw",
-                    sm: "70vw",
-                    md: "30vw",
+                    md: "40vw",
                     xl: "35.8vw",
                     [theme.breakpoints.up(1980)]: {
                       display: "none",
@@ -380,17 +392,22 @@ const Features = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  alignItems: "center",
-                  marginBlockStart: theme.spacing(17.25),
+                  alignItems: { xs: "center", md: "flex-start" },
                 }}
               >
-                <Typography variant="h2" textAlign={{ xs: "center" }}>
-                  Bookmark in one click
+                <Typography
+                  variant="h2"
+                  textAlign={{ xs: "center", md: "left" }}
+                >
+                  Share your bookmarks
                 </Typography>
-                <Typography variant="body1" textAlign={{ xs: "center" }}>
-                  Organize your bookmarks however you like. Our simple
-                  drag-and-drop interface gives you complete control over how
-                  you manage your favourite sites.
+                <Typography
+                  variant="body1"
+                  textAlign={{ xs: "center", md: "left" }}
+                >
+                  Easily share your bookmarks and collections with others.
+                  Create a shareable link that you can send at the click of a
+                  button.
                 </Typography>
                 <Button
                   variant="contained"
@@ -403,7 +420,7 @@ const Features = () => {
                   More Info
                 </Button>
               </Box>
-            </Box>
+            </Stack>
           </Stack>
         </Box>
       </Box>
