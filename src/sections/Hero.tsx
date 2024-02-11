@@ -44,7 +44,7 @@ const Hero = () => {
         spacing={{ xs: theme.spacing(24), md: theme.spacing(17) }}
         direction={{ xs: "column", md: "row-reverse" }}
       >
-        {/* Hero Illustration */}
+        {/* Hero Illustration and blue background */}
         <Box
           sx={{
             position: "relative",

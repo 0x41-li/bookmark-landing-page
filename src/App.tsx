@@ -84,7 +84,7 @@ function App() {
         color: colors.darkBlue,
 
         "@media (min-width: 1280px)": {
-          fontSize: "3rem",
+          fontSize: "2rem",
           lineHeight: "3.25rem",
         },
       },
@@ -172,6 +172,16 @@ function App() {
             "&:hover": {
               backgroundColor: "white",
               border: `2px solid ${alpha(colors.darkBlue, 0.75)}`,
+            },
+          },
+        },
+      },
+
+      MuiTypography: {
+        styleOverrides: {
+          body1: {
+            "@media (min-width: 1280px)": {
+              marginBlockStart: "1rem",
             },
           },
         },

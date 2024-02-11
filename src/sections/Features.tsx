@@ -12,7 +12,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // images/illustrations
 import simpleBookmarkingSVG from "../assets/images/features/simple-bookmarking.svg";
@@ -22,12 +22,28 @@ import easySharingSVG from "../assets/images/features/easy-sharing.svg";
 const Features = () => {
   const theme = useTheme() as Theme;
 
+  const tabsElRef = useRef<HTMLDivElement>(null);
+  const [tabsElWidth, setTabsElWidth] = useState(0);
   const [tabsIndex, setTabsIndex] = useState(0);
 
   const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  useEffect(() => {
+    if (tabsElRef.current) {
+      // Get the width of the Tabs component
+      const width = tabsElRef.current.clientWidth;
+      setTabsElWidth(width);
+    }
+  }, []);
+
   return (
-    <Container sx={{ marginBlockStart: theme.spacing(35) }}>
+    <Container
+      component="section"
+      sx={{
+        marginBlockStart: { xs: theme.spacing(35), md: theme.spacing(50) },
+        maxWidth: "1104px",
+      }}
+    >
       {/* Text */}
       <Box sx={{ maxWidth: { md: "540px" }, marginInline: "auto" }}>
         <Typography variant="h2" textAlign="center">
@@ -41,8 +57,13 @@ const Features = () => {
       </Box>
 
       {/* Tabs  */}
-      <Box sx={{ marginBlockStart: theme.spacing(10) }}>
+      <Box
+        sx={{
+          marginBlockStart: { xs: theme.spacing(10), xl: theme.spacing(11.5) },
+        }}
+      >
         <Tabs
+          ref={tabsElRef}
           value={tabsIndex}
           onChange={(_, i) => setTabsIndex(i)}
           orientation={IsMobile ? "vertical" : "horizontal"}
@@ -53,7 +74,7 @@ const Features = () => {
               top: IsMobile ? `${58 * (tabsIndex + 1) - 4}px` : "",
               height: "4px",
               width: IsMobile ? "143px" : "240px",
-              left: IsMobile ? "50%" : `${234 * tabsIndex}px`,
+              left: IsMobile ? "50%" : `${(tabsElWidth / 3) * tabsIndex}px`,
               translate: IsMobile ? "-50% 0" : "",
             },
           }}
@@ -65,7 +86,7 @@ const Features = () => {
               color: alpha(theme.palette.darkBlue.main, 0.75),
               fontWeight: 400,
               textTransform: "capitalize",
-              height: "57px",
+              height: { xs: "57px", xl: "76px" },
               maxWidth: "unset",
               flex: IsMobile ? "0 0 1" : "1",
             },
@@ -89,340 +110,228 @@ const Features = () => {
       </Box>
 
       {/* Tabs Content */}
-      <Box sx={{ position: "relative" }}>
-        {/* Images/Illustrations & Text */}
-        <Box sx={{ overflow: "hidden", marginInline: theme.spacing(-8) }}>
+      <Box
+        sx={{
+          marginInline: { xs: theme.spacing(-8), xl: 0 },
+          marginBlockStart: theme.spacing(18),
+          overflow: "hidden",
+        }}
+      >
+        <Stack
+          flexDirection="row"
+          sx={{
+            "& > *": {
+              flex: "0 0 100%",
+              paddingInline: { xs: theme.spacing(8), xl: 0 },
+            },
+            translate: `${tabsIndex * -100}%`,
+            transition: "translate 400ms ease-in-out",
+            maxWidth: { xk: "1031px" },
+          }}
+        >
           <Stack
-            sx={{
-              position: "relative",
-              translate: `calc(-${tabsIndex * 100}% - ${tabsIndex * 32}px) 0%`,
-              "&>*": { flex: "0 0 100%" },
-              transition: "translate 400ms ease-in-out",
-              paddingBlockEnd: { md: theme.spacing(8) },
+            flexDirection={{ md: "row" }}
+            sx={{ "&>*": { flex: { md: "1", xl: "0 0 auto" } } }}
+            alignItems={{ md: "center", xl: "unset" }}
+            justifyContent={{ xl: "space-between" }}
+            gap={{
+              md: theme.spacing(8),
+              lg: theme.spacing(16),
+              xl: 0,
             }}
-            flexDirection="row"
-            gap={theme.spacing(8)}
           >
-            <Stack
+            <Box
               sx={{
-                position: "relative",
-
-                marginBlockStart: theme.spacing(18),
-                paddingInline: theme.spacing(8),
+                "& img, & picture": {
+                  display: "block",
+                  marginInline: "auto",
+                },
+                "& picture": {
+                  maxWidth: "536px",
+                },
               }}
-              gap={{ xs: theme.spacing(17.25) }}
-              flexDirection={{ md: "row" }}
-              alignItems={{ md: "flex-start" }}
             >
-              {/* blue background behind the illustration */}
-              <Box
-                sx={{
-                  position: "absolute",
-
-                  top: { xs: "9vw", md: "5vw" },
-
-                  left: {
-                    xs: 0,
-                    lg: theme.spacing(-16),
-                  },
-
-                  width: {
-                    xs: "81.4vw",
-                    md: "40vw",
-                    xl: "35.8vw",
-                    [theme.breakpoints.up(1980)]: {
-                      display: "none",
-                    },
-                  },
-
-                  height: { xs: "203px", xl: "24.4vw" },
-                  maxHeight: "400px",
-
-                  borderBottomRightRadius: "316px",
-                  borderTopRightRadius: "316px",
-
-                  background: theme.palette.primary.main,
-                  zIndex: "-999",
-                }}
-              />
-
-              {/* Image/Illustration */}
-              <picture className="features-sec__picture">
-                {/* SVG */}
-                <source type="image/svg+xml" srcSet={simpleBookmarkingSVG} />
-
-                {/* AVIF format */}
-                {/* <source
-              type="image/avif"
-              srcSet={`${bookmarkInterfaceIllustration309wAVIF} 309w, ${bookmarkInterfaceIllustration575wAVIF} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
-            /> */}
-
-                {/* WEBP format */}
-                {/* <source
-              type="image/webp"
-              srcSet={`${bookmarkInterfaceIllustration309wWEBP} 309w, ${bookmarkInterfaceIllustration575wWEBP} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
-            /> */}
-
-                {/* PNG format */}
+              <picture>
+                <source srcSet={simpleBookmarkingSVG} type="image/svg+xml" />
                 <img src="" alt="" />
-                {/* <img
-              className="hero-sec__img"
-              srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
-              src={bookmarkInterfaceIllustration575wPNG}
-              sizes="(max-width: 425px) 308px, 574px"
-              alt="Bookmark web interface illustration"
-            /> */}
               </picture>
+            </Box>
 
-              {/* Text */}
-              <Box
+            <Box
+              sx={{
+                marginBlockStart: {
+                  xs: theme.spacing(17),
+                  md: theme.spacing(0),
+                  xl: theme.spacing(14),
+                },
+                maxWidth: "445px",
+                marginInline: { xs: "auto", xl: "unset" },
+                "&>h2, &>p": {
+                  textAlign: { xs: "center", md: "left" },
+                },
+                "&>button": {
+                  marginInline: { xs: "auto", md: "unset" },
+                },
+              }}
+            >
+              <Typography variant="h2">Bookmark in one click</Typography>
+              <Typography variant="body1">
+                Organize your bookmarks however you like. Our simple
+                drag-and-drop interface gives you complete control over how you
+                manage your favourite sites.
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
                 sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: { xs: "center", md: "flex-start" },
+                  marginInline: "auto",
+                  display: "block",
+                  marginBlockStart: {
+                    xs: theme.spacing(4),
+                    md: theme.spacing(8),
+                  },
+                  paddingInline: theme.spacing(6),
                 }}
               >
-                <Typography
-                  variant="h2"
-                  textAlign={{ xs: "center", md: "left" }}
-                >
-                  Bookmark in one click
-                </Typography>
-                <Typography
-                  variant="body1"
-                  textAlign={{ xs: "center", md: "left" }}
-                >
-                  Organize your bookmarks however you like. Our simple
-                  drag-and-drop interface gives you complete control over how
-                  you manage your favourite sites.
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{
-                    marginBlockStart: theme.spacing(3.5),
-                    flexBasis: "1",
-                    paddingInline: "24px",
-                  }}
-                >
-                  More Info
-                </Button>
-              </Box>
-            </Stack>
-
-            <Stack
-              sx={{
-                position: "relative",
-
-                marginBlockStart: theme.spacing(18),
-                paddingInline: theme.spacing(8),
-              }}
-              gap={{ xs: theme.spacing(17.25) }}
-              flexDirection={{ md: "row" }}
-              alignItems={{ md: "flex-start" }}
-            >
-              {/* blue background behind the illustration */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: { xs: "22vw", md: "12vw" },
-                  left: {
-                    xs: 0,
-                    lg: theme.spacing(-16),
-                  },
-                  width: {
-                    xs: "81.4vw",
-                    md: "34vw",
-                    xl: "35.8vw",
-                    [theme.breakpoints.up(1980)]: {
-                      display: "none",
-                    },
-                  },
-                  height: { xs: "203px", xl: "24.4vw" },
-                  maxHeight: "400px",
-
-                  borderBottomRightRadius: "316px",
-                  borderTopRightRadius: "316px",
-
-                  background: theme.palette.primary.main,
-                  zIndex: "-999",
-                }}
-              />
-
-              {/* Image/Illustration */}
-              <picture className="features-sec__picture">
-                {/* SVG */}
-                <source type="image/svg+xml" srcSet={speedySearchingSVG} />
-
-                {/* AVIF format */}
-                {/* <source
-              type="image/avif"
-              srcSet={`${bookmarkInterfaceIllustration309wAVIF} 309w, ${bookmarkInterfaceIllustration575wAVIF} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
-            /> */}
-
-                {/* WEBP format */}
-                {/* <source
-              type="image/webp"
-              srcSet={`${bookmarkInterfaceIllustration309wWEBP} 309w, ${bookmarkInterfaceIllustration575wWEBP} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
-            /> */}
-
-                {/* PNG format */}
-                <img src="" alt="" />
-                {/* <img
-              className="hero-sec__img"
-              srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
-              src={bookmarkInterfaceIllustration575wPNG}
-              sizes="(max-width: 425px) 308px, 574px"
-              alt="Bookmark web interface illustration"
-            /> */}
-              </picture>
-
-              {/* Text */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: { xs: "center", md: "flex-start" },
-                }}
-              >
-                <Typography
-                  variant="h2"
-                  textAlign={{ xs: "center", md: "left" }}
-                >
-                  Intelligent search
-                </Typography>
-                <Typography
-                  variant="body1"
-                  textAlign={{ xs: "center", md: "left" }}
-                >
-                  Our powerful search feature will help you find saved sites in
-                  no time at all. No need to trawl through all of your
-                  bookmarks.
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{
-                    marginBlockStart: theme.spacing(3.5),
-                    flexBasis: "1",
-                    paddingInline: "24px",
-                  }}
-                >
-                  More Info
-                </Button>
-              </Box>
-            </Stack>
-
-            <Stack
-              sx={{
-                position: "relative",
-
-                marginBlockStart: theme.spacing(18),
-                paddingInline: theme.spacing(8),
-              }}
-              gap={{ xs: theme.spacing(17.25) }}
-              flexDirection={{ md: "row" }}
-              alignItems={{ md: "flex-start" }}
-            >
-              {/* blue background behind the illustration */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: { xs: "24vw", sm: "90px", xl: "135px" },
-                  left: {
-                    xs: 0,
-                    lg: theme.spacing(-16),
-                  },
-                  width: {
-                    xs: "81.4vw",
-                    md: "40vw",
-                    xl: "35.8vw",
-                    [theme.breakpoints.up(1980)]: {
-                      display: "none",
-                    },
-                  },
-                  height: { xs: "203px", xl: "24.4vw" },
-                  maxHeight: "400px",
-
-                  borderBottomRightRadius: "316px",
-                  borderTopRightRadius: "316px",
-
-                  background: theme.palette.primary.main,
-                  zIndex: "-999",
-                }}
-              />
-
-              {/* Image/Illustration */}
-              <picture className="features-sec__picture">
-                {/* SVG */}
-                <source type="image/svg+xml" srcSet={easySharingSVG} />
-
-                {/* AVIF format */}
-                {/* <source
-              type="image/avif"
-              srcSet={`${bookmarkInterfaceIllustration309wAVIF} 309w, ${bookmarkInterfaceIllustration575wAVIF} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
-            /> */}
-
-                {/* WEBP format */}
-                {/* <source
-              type="image/webp"
-              srcSet={`${bookmarkInterfaceIllustration309wWEBP} 309w, ${bookmarkInterfaceIllustration575wWEBP} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
-            /> */}
-
-                {/* PNG format */}
-                <img src="" alt="" />
-                {/* <img
-              className="hero-sec__img"
-              srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
-              src={bookmarkInterfaceIllustration575wPNG}
-              sizes="(max-width: 425px) 308px, 574px"
-              alt="Bookmark web interface illustration"
-            /> */}
-              </picture>
-
-              {/* Text */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: { xs: "center", md: "flex-start" },
-                }}
-              >
-                <Typography
-                  variant="h2"
-                  textAlign={{ xs: "center", md: "left" }}
-                >
-                  Share your bookmarks
-                </Typography>
-                <Typography
-                  variant="body1"
-                  textAlign={{ xs: "center", md: "left" }}
-                >
-                  Easily share your bookmarks and collections with others.
-                  Create a shareable link that you can send at the click of a
-                  button.
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{
-                    marginBlockStart: theme.spacing(3.5),
-                    flexBasis: "1",
-                    paddingInline: "24px",
-                  }}
-                >
-                  More Info
-                </Button>
-              </Box>
-            </Stack>
+                More Info
+              </Button>
+            </Box>
           </Stack>
-        </Box>
+
+          <Stack
+            flexDirection={{ md: "row" }}
+            sx={{ "&>*": { flex: { md: "1" } } }}
+            alignItems={{ md: "center", xl: "unset" }}
+            gap={{
+              md: theme.spacing(8),
+              lg: theme.spacing(16),
+              xl: theme.spacing(31),
+            }}
+          >
+            <Box
+              sx={{
+                "& img, & picture": {
+                  display: "block",
+                  marginInline: "auto",
+                },
+                "& picture": {
+                  maxWidth: "536px",
+                },
+              }}
+            >
+              <picture>
+                <source srcSet={speedySearchingSVG} type="image/svg+xml" />
+                <img src="" alt="" />
+              </picture>
+            </Box>
+
+            <Box
+              sx={{
+                marginBlockStart: {
+                  xs: theme.spacing(17),
+                  md: theme.spacing(0),
+                  xl: theme.spacing(14),
+                },
+                maxWidth: "445px",
+                marginInline: "auto",
+                "&>h2, &>p": {
+                  textAlign: { xs: "center", md: "left" },
+                },
+                "&>button": {
+                  marginInline: { xs: "auto", md: "unset" },
+                },
+              }}
+            >
+              <Typography variant="h2">Intelligent search</Typography>
+              <Typography variant="body1">
+                Our powerful search feature will help you find saved sites in no
+                time at all. No need to trawl through all of your bookmarks.
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{
+                  marginInline: "auto",
+                  display: "block",
+                  marginBlockStart: {
+                    xs: theme.spacing(4),
+                    md: theme.spacing(8),
+                  },
+                  paddingInline: theme.spacing(6),
+                }}
+              >
+                More Info
+              </Button>
+            </Box>
+          </Stack>
+
+          <Stack
+            flexDirection={{ md: "row" }}
+            sx={{ "&>*": { flex: { md: "1" } } }}
+            alignItems={{ md: "center", xl: "unset" }}
+            gap={{
+              md: theme.spacing(8),
+              lg: theme.spacing(16),
+              xl: theme.spacing(31),
+            }}
+          >
+            <Box
+              sx={{
+                "& img, & picture": {
+                  display: "block",
+                  marginInline: "auto",
+                },
+                "& picture": {
+                  maxWidth: "536px",
+                },
+              }}
+            >
+              <picture>
+                <source srcSet={easySharingSVG} type="image/svg+xml" />
+                <img src="" alt="" />
+              </picture>
+            </Box>
+
+            <Box
+              sx={{
+                marginBlockStart: {
+                  xs: theme.spacing(17),
+                  md: theme.spacing(0),
+                  xl: theme.spacing(14),
+                },
+                maxWidth: "445px",
+                marginInline: "auto",
+                "&>h2, &>p": {
+                  textAlign: { xs: "center", md: "left" },
+                },
+                "&>button": {
+                  marginInline: { xs: "auto", md: "unset" },
+                },
+              }}
+            >
+              <Typography variant="h2">Share your bookmarks</Typography>
+              <Typography variant="body1">
+                Easily share your bookmarks and collections with others. Create
+                a shareable link that you can send at the click of a button.
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{
+                  marginInline: "auto",
+                  display: "block",
+                  marginBlockStart: {
+                    xs: theme.spacing(4),
+                    md: theme.spacing(8),
+                  },
+                  paddingInline: theme.spacing(6),
+                }}
+              >
+                More Info
+              </Button>
+            </Box>
+          </Stack>
+        </Stack>
       </Box>
     </Container>
   );
