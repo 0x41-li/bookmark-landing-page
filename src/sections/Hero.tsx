@@ -82,40 +82,6 @@ const Hero = () => {
               alt="Bookmark web interface illustration"
             />
           </picture>
-
-          {/* blue background behind the illustration */}
-          <Box
-            sx={{
-              position: "absolute",
-              top: { xs: "13vw", sm: "90px", xl: "135px" },
-              right: {
-                xs: theme.spacing(-8),
-                lg: theme.spacing(-16),
-                [theme.breakpoints.between(1104, 1280)]: {
-                  right: `calc( ((100vw - 1104px) / -2) - ${theme.spacing(
-                    16
-                  )})`,
-                },
-                xl: "calc((100vw - 1104px ) / -2)",
-              },
-              width: {
-                xs: "81.4vw",
-                sm: "70vw",
-                md: "30vw",
-                xl: "35.8vw",
-                [theme.breakpoints.up(1980)]: {
-                  display: "none",
-                },
-              },
-              height: { xs: "203px", xl: "24.4vw" },
-              maxHeight: "400px",
-
-              borderBottomLeftRadius: "316px",
-              borderTopLeftRadius: "316px",
-
-              background: theme.palette.primary.main,
-            }}
-          />
         </Box>
 
         {/* Hero Text */}

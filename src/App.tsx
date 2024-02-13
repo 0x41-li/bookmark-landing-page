@@ -9,6 +9,7 @@ import "./sass/app.scss";
 import Header from "./shared/Header.tsx";
 import Hero from "./sections/Hero.tsx";
 import Features from "./sections/Features.tsx";
+import DownloadExtension from "./sections/DownloadExtension.tsx";
 
 // Mui module extension
 // ! I tried to put in another file, but I faced a lot of issues
@@ -87,6 +88,13 @@ function App() {
           fontSize: "2rem",
           lineHeight: "3.25rem",
         },
+      },
+
+      h3: {
+        fontSize: "1.25rem",
+        lineHeight: "1.5rem",
+        fontWeight: 500,
+        color: colors.darkBlue,
       },
 
       body1: {
@@ -176,16 +184,6 @@ function App() {
           },
         },
       },
-
-      MuiTypography: {
-        styleOverrides: {
-          body1: {
-            "@media (min-width: 1280px)": {
-              marginBlockStart: "1rem",
-            },
-          },
-        },
-      },
     },
 
     spacing: 4,
@@ -210,6 +208,7 @@ function App() {
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Hero />
       <Features />
+      <DownloadExtension />
     </ThemeProvider>
   );
 }

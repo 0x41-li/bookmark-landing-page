@@ -2,7 +2,7 @@ import { Box, Container, Link, Stack, Theme } from "@mui/material";
 import { useTheme } from "@emotion/react";
 
 // Assets
-import LogoSVG from "../assets/logo/LogoSVG";
+import LogoSVG from "../components/LogoSVG";
 
 // Header Items
 import data from "../data/data.json";

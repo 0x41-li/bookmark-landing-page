@@ -13,13 +13,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-
-// images/illustrations
 import simpleBookmarkingSVG from "../assets/images/features/simple-bookmarking.svg";
 import speedySearchingSVG from "../assets/images/features/speedy-searching.svg";
 import easySharingSVG from "../assets/images/features/easy-sharing.svg";
 
-const Features = () => {
+export const Features = () => {
   const theme = useTheme() as Theme;
 
   const tabsElRef = useRef<HTMLDivElement>(null);
@@ -114,7 +112,7 @@ const Features = () => {
       </Box>
 
       {/* Tabs Content */}
-      {/* Slider Out Wrapper */}
+
       <Box
         sx={{
           marginInline: { xs: theme.spacing(-8), xl: 0 },
@@ -135,7 +133,6 @@ const Features = () => {
             maxWidth: { xk: "1031px" },
           }}
         >
-          {/* Slide */}
           <Stack
             flexDirection={{ md: "row" }}
             sx={{ "&>*": { flex: { md: "1", xl: "0 0 auto" } } }}
@@ -210,7 +207,6 @@ const Features = () => {
             </Box>
           </Stack>
 
-          {/* Slide */}
           <Stack
             flexDirection={{ md: "row" }}
             sx={{ "&>*": { flex: { md: "1" } } }}
@@ -221,7 +217,6 @@ const Features = () => {
               xl: theme.spacing(31),
             }}
           >
-            {/* Illusttration */}
             <Box
               sx={{
                 "& img, & picture": {
@@ -239,7 +234,6 @@ const Features = () => {
               </picture>
             </Box>
 
-            {/* Right Text Part */}
             <Box
               sx={{
                 marginBlockStart: {
@@ -258,10 +252,7 @@ const Features = () => {
               }}
             >
               <Typography variant="h2">Intelligent search</Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
-              >
+              <Typography variant="body1">
                 Our powerful search feature will help you find saved sites in no
                 time at all. No need to trawl through all of your bookmarks.
               </Typography>
@@ -283,7 +274,6 @@ const Features = () => {
             </Box>
           </Stack>
 
-          {/* Slide */}
           <Stack
             flexDirection={{ md: "row" }}
             sx={{ "&>*": { flex: { md: "1" } } }}
@@ -294,7 +284,6 @@ const Features = () => {
               xl: theme.spacing(31),
             }}
           >
-            {/* Illustration */}
             <Box
               sx={{
                 "& img, & picture": {
@@ -312,7 +301,6 @@ const Features = () => {
               </picture>
             </Box>
 
-            {/* Right Text Part */}
             <Box
               sx={{
                 marginBlockStart: {
@@ -331,10 +319,7 @@ const Features = () => {
               }}
             >
               <Typography variant="h2">Share your bookmarks</Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
-              >
+              <Typography variant="body1">
                 Easily share your bookmarks and collections with others. Create
                 a shareable link that you can send at the click of a button.
               </Typography>
@@ -360,5 +345,3 @@ const Features = () => {
     </Container>
   );
 };
-
-export default Features;
