@@ -22,7 +22,7 @@
         "href": "#"
       }
     ],
-    "socialMediaLinksAndIcons": [
+    "social-media": [
       {
         "name": "facebook",
         "href": "#"
@@ -38,5 +38,113 @@
     "subheading": "A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.",
     "CTA": "Get it on Chrome",
     "ghostButton": "Get it on Firefox"
+  },
+  "features": {
+    "heading": "Features",
+    "subheading": "Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.",
+    "tabs": [
+      {
+        "tabText": "Simple Bookmarking",
+        "content": {
+          "heading": "Bookmark in one click",
+          "subheading": "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
+          "button-text": "More Info"
+        }
+      },
+      {
+        "tabText": "Speedy Searching",
+        "heading": "Intelligent search",
+        "content": {
+          "subheading": "Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.",
+          "button-text": "More Info"
+        }
+      },
+      {
+        "tabText": "Easy Sharing",
+        "heading": "Share your bookmarks",
+        "content": {
+          "subheading": "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
+          "button-text": "More Info"
+        }
+      }
+    ]
+  },
+  "download-extension": {
+    "heading": "Download the extension",
+    "subheading": "We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.",
+    "card": [
+      {
+        "heading": "Add to Chrome",
+        "subheading": "Minimum version 62",
+        "button-text": "Add & Install Extension"
+      },
+      {
+        "heading": "Add to Firefox",
+        "subheading": "Minimum version 55",
+        "button-text": "Add & Install Extension"
+      },
+      {
+        "heading": "Add to Opera",
+        "subheading": "Minimum version 46",
+        "button-text": "Add & Install Extension"
+      }
+    ]
+  },
+  "FAQs": {
+    "heading": "",
+    "subheading": "",
+    "questions-and-answers": [
+      {
+        "q": "What is Bookmark?",
+        "a": "Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet."
+      },
+      {
+        "q": "How can I request a new browser?",
+        "a": "Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet."
+      },
+      {
+        "q": "Is there a mobile app?",
+        "a": "Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet."
+      },
+      {
+        "q": "What about other Chromium browsers?",
+        "a": "Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet."
+      }
+    ],
+    "button-text": "More Info"
+  },
+  "newsletter": {
+    "supheading": "",
+    "heading": "",
+    "form": {
+      "input-placeholder-text": "Enter your email address",
+      "button-text": "Contact Us"
+    }
+  },
+  "footer": {
+    "links": [
+      {
+        "text": "features",
+        "href": "#"
+      },
+      {
+        "text": "pricing",
+        "href": "#"
+      },
+      {
+        "text": "contact",
+        "href": "#"
+      }
+    ],
+    "social-media": [
+      {
+        "name": "facebook",
+        "href": "#"
+      },
+      {
+        "name": "x",
+        "href": "#"
+      }
+    ]
   }
 }

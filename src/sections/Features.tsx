@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Container,
-  Divider,
   Stack,
   Tab,
   Tabs,
@@ -12,12 +11,15 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 
 // images/illustrations
 import simpleBookmarkingSVG from "../assets/images/features/simple-bookmarking.svg";
 import speedySearchingSVG from "../assets/images/features/speedy-searching.svg";
 import easySharingSVG from "../assets/images/features/easy-sharing.svg";
+
+// data
+import data from "../data/data.json";
 
 const Features = () => {
   const theme = useTheme() as Theme;
@@ -27,6 +29,9 @@ const Features = () => {
   const [tabsIndex, setTabsIndex] = useState(0);
 
   const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const featuresData = data.features;
+  
 
   useEffect(() => {
     if (tabsElRef.current) {
@@ -47,16 +52,14 @@ const Features = () => {
       {/* Text */}
       <Box sx={{ maxWidth: { md: "540px" }, marginInline: "auto" }}>
         <Typography variant="h2" textAlign="center">
-          Features
+          {featuresData.heading}
         </Typography>
         <Typography
           variant="body1"
           textAlign="center"
           sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
         >
-          Our aim is to make it quick and easy for you to access your favourite
-          websites. Your bookmarks sync between your devices so you can access
-          them on the go.
+          {featuresData.subheading}
         </Typography>
       </Box>
 
@@ -86,30 +89,37 @@ const Features = () => {
             maxWidth: "730px",
             marginInline: "auto",
             borderBottom: IsMobile ? "unset" : "1px solid rgba(0, 0, 0, 0.12)",
-            "& .MuiTab-root": {
-              color: alpha(theme.palette.darkBlue.main, 0.75),
-              fontWeight: 400,
-              textTransform: "capitalize",
-              height: { xs: "57px", xl: "76px" },
-              maxWidth: "unset",
-              flex: IsMobile ? "0 0 1" : "1",
-            },
-            "& .Mui-selected": {
-              color: theme.palette.darkBlue.main,
-              fontWeight: 400,
-            },
-            "& .MuiDivider-root": {
-              display: { md: "none" },
-            },
           }}
         >
-          <Divider />
-          <Tab value={0} label="Simple Bookmarking" />
-          <Divider />
-          <Tab value={1} label="Speedy Searching" />
-          <Divider />
-          <Tab value={2} label="Easy Sharing" />
-          <Divider />
+          {featuresData.tabs.map((tab, i) => {
+            return (
+              <Tab
+                key={i}
+                value={i}
+                label={tab.tabText}
+                sx={{
+                  color: alpha(theme.palette.darkBlue.main, 0.75),
+                  fontWeight: 400,
+                  textTransform: "capitalize",
+                  height: { xs: "58px", xl: "76px" },
+                  maxWidth: "unset",
+                  flex: IsMobile ? "0 0 1" : "1",
+                  borderBottom: "1px solid rgba(73, 93, 207, 0.2001)",
+                  opacity: 0.75,
+         
+
+                  "&.Mui-selected": {
+                    color: theme.palette.darkBlue.main,
+                    fontWeight: 400,
+                  },
+
+                  "&.MuiDivider-root": {
+                    display: { md: "none" },
+                  },
+                }}
+              />
+            );
+          })}
         </Tabs>
       </Box>
 

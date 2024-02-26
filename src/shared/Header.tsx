@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 
   const header = data.header;
   const menu = header.menu;
-  const socialMediaIcons = header.socialMediaLinksAndIcons;
+  const socialMediaIcons = header["social-media"];
 
   return (
     <Container
