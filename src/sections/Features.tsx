@@ -11,7 +11,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // images/illustrations
 import simpleBookmarkingSVG from "../assets/images/features/simple-bookmarking.svg";
@@ -31,7 +31,6 @@ const Features = () => {
   const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const featuresData = data.features;
-  
 
   useEffect(() => {
     if (tabsElRef.current) {
@@ -54,6 +53,7 @@ const Features = () => {
         <Typography variant="h2" textAlign="center">
           {featuresData.heading}
         </Typography>
+
         <Typography
           variant="body1"
           textAlign="center"
@@ -106,7 +106,6 @@ const Features = () => {
                   flex: IsMobile ? "0 0 1" : "1",
                   borderBottom: "1px solid rgba(73, 93, 207, 0.2001)",
                   opacity: 0.75,
-         
 
                   "&.Mui-selected": {
                     color: theme.palette.darkBlue.main,

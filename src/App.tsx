@@ -11,6 +11,7 @@ import Hero from "./sections/Hero.tsx";
 import Features from "./sections/Features.tsx";
 import DownloadExtension from "./sections/DownloadExtension.tsx";
 import FAQ from "./sections/FAQ.tsx";
+import Newsletter from "./sections/Newsletter.tsx";
 
 // Mui module extension
 // ! I tried to put in another file, but I faced a lot of issues
@@ -211,6 +212,7 @@ function App() {
       <Features />
       <DownloadExtension />
       <FAQ />
+      <Newsletter />
     </ThemeProvider>
   );
 }

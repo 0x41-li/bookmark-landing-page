@@ -114,11 +114,12 @@
     "button-text": "More Info"
   },
   "newsletter": {
-    "supheading": "",
-    "heading": "",
+    "supheading": "35,000+ ALREADY JOINED",
+    "heading": "Stay up-to-date with what we’re doing",
     "form": {
       "input-placeholder-text": "Enter your email address",
-      "button-text": "Contact Us"
+      "button-text": "Contact Us",
+      "error-text": "Whoops, make sure it’s an emailWhoops, make sure it’s an email"
     }
   },
   "footer": {
