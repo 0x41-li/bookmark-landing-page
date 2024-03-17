@@ -1,6 +1,6 @@
 import { ThemeProvider, alpha, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import { useEffect, useState } from "react";
+import { CssBaseline } from "@mui/material";
 
 // sass
 import "./sass/app.scss";
@@ -14,7 +14,7 @@ import FAQ from "./sections/FAQ.tsx";
 import Newsletter from "./sections/Newsletter.tsx";
 
 // Mui module extension
-// ! I tried to put in another file, but I faced a lot of issues
+// ! I tried to put this in another file, but I faced an error which took me a lot of time and couldn't fix it in 2 hours, so I decided to give it a break and continue the project
 declare module "@mui/material/styles" {
   interface Palette {
     darkBlue: Palette["primary"];
@@ -194,7 +194,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // prevent scrolling when menu open on mobile devices
-  // ! Overflow hidden will not be removed if the menu was open in a small size device, and the device size changed to a tablet+ size, this can be done using dev tool, or rotating
+  // ! Overflow hidden will not be removed if the menu was open in a small size device, and the device size changed to a tablet+ size, this can be done using dev tool
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -207,6 +207,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Hero />
       <Features />

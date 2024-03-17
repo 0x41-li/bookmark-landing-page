@@ -5,6 +5,7 @@ import {
   Input,
   Theme,
   Typography,
+  alpha,
   useTheme,
 } from "@mui/material";
 
@@ -19,26 +20,31 @@ const Newsletter = () => {
     <Container
       component="section"
       sx={{
-        marginBlockStart: { xs: theme.spacing(30), md: theme.spacing(50) },
-        maxWidth: "1104px",
+        marginBlockStart: { xs: theme.spacing(30.5), md: theme.spacing(37.5) },
         backgroundColor: theme.palette.primary.main,
       }}
     >
       <Box
         sx={{
-          paddingBlock: theme.spacing(15),
+          maxWidth: "442px",
+          marginInline: "auto",
+          paddingBlock: {
+            xs: theme.spacing(15),
+            md: `${theme.spacing(14.5)} ${theme.spacing(18.5)}`,
+          },
         }}
       >
         {/* Text */}
-        <Box>
+        <Box sx={{}}>
           <Typography
             component="p"
             textAlign="center"
             sx={{
-              fontSize: "0.75rem",
-              letterSpacing: theme.spacing(1.125),
-              lineHeight: theme.spacing(10),
+              fontSize: { xs: "0.75rem", md: "0.8125rem" },
+              letterSpacing: "0.2888rem",
+              lineHeight: `${theme.spacing(10)} !important`,
               color: "#FFFFFF",
+              fontWeight: 500,
             }}
           >
             {newsletterData.supheading}
@@ -48,7 +54,8 @@ const Newsletter = () => {
             variant="h2"
             textAlign="center"
             sx={{
-              lineHeight: "1.75rem",
+              marginBlockStart: { lg: theme.spacing(7) },
+              lineHeight: { xs: "1.75rem", lg: "2.5rem" },
               letterSpacing: "-0.08px",
               color: "#FFFFFF",
             }}
@@ -58,9 +65,20 @@ const Newsletter = () => {
         </Box>
 
         {/* Form */}
-        <Box component="form" noValidate>
+        <Box
+          component="form"
+          noValidate
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { md: "flex-end" },
+            gap: { xs: theme.spacing(4), md: 0 },
+            justifyContent: { md: "space-between" },
+          }}
+        >
           <Input
             fullWidth
+            disableUnderline
             placeholder="Enter your email address"
             sx={{
               "& input": {
@@ -73,6 +91,14 @@ const Newsletter = () => {
                 borderRadius: "5px",
                 height: "28px",
               },
+              "& input::placeholder": {
+                fontSize: "0.875rem",
+                letterSpacing: "0.015625rem",
+                lineHeight: "1.75rem",
+                color: alpha(theme.palette.darkBlue.main, 25),
+              },
+
+              flex: { md: "0 0 300px" },
             }}
           />
 
@@ -80,8 +106,13 @@ const Newsletter = () => {
             variant="contained"
             sx={{
               background: "#FA5959",
-              marginBlockStart: theme.spacing(4),
-              width: "100%",
+              width: { xs: "100%", md: "126px" },
+              fontSize: "0.875rem",
+              lineHeight: "1.75rem",
+              letterSpacing: "0.015625rem",
+              fontWeight: 500,
+              paddingBlock: theme.spacing(2),
+              paddingInline: "0 !important",
             }}
           >
             Contact Us
