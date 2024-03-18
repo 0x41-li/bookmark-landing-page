@@ -54,7 +54,7 @@ const Newsletter = () => {
             variant="h2"
             textAlign="center"
             sx={{
-              marginBlockStart: { lg: theme.spacing(7) },
+              marginBlockStart: { xl: theme.spacing(6) },
               lineHeight: { xs: "1.75rem", lg: "2.5rem" },
               letterSpacing: "-0.08px",
               color: "#FFFFFF",
@@ -69,6 +69,7 @@ const Newsletter = () => {
           component="form"
           noValidate
           sx={{
+            marginBlockStart: { xs: theme.spacing(8), xl: theme.spacing(9) },
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             alignItems: { md: "flex-end" },
@@ -82,7 +83,6 @@ const Newsletter = () => {
             placeholder="Enter your email address"
             sx={{
               "& input": {
-                marginBlockStart: theme.spacing(8),
                 backgroundColor: "white",
                 paddingInline: theme.spacing(5),
                 paddingBlock: theme.spacing(2.5),
