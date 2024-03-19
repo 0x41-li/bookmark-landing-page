@@ -1,6 +1,8 @@
+// Utilities
 import { ThemeProvider, alpha, createTheme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import { CssBaseline } from "@mui/material";
+import { colors } from "./designSystem";
 
 // sass
 import "./sass/app.scss";
@@ -12,6 +14,7 @@ import Features from "./sections/Features.tsx";
 import DownloadExtension from "./sections/DownloadExtension.tsx";
 import FAQ from "./sections/FAQ.tsx";
 import Newsletter from "./sections/Newsletter.tsx";
+import Footer from "./sections/Footer.tsx";
 
 // Mui module extension
 // ! I tried to put this in another file, but I faced an error which took me a lot of time and couldn't fix it in 2 hours, so I decided to give it a break and continue the project
@@ -26,15 +29,6 @@ declare module "@mui/material/styles" {
     gray: PaletteOptions["primary"];
   }
 }
-
-const colors = {
-  primary: "#5267DF",
-  secondary: "#FA5959",
-  darkBlue: "#242A45",
-  gray: "#9194A2",
-
-  bodyText: "rgba(32, 46, 69, 0.5)",
-};
 
 function App() {
   const theme = createTheme({
@@ -186,6 +180,22 @@ function App() {
           },
         },
       },
+
+      MuiList: {
+        styleOverrides: {
+          root: {
+            padding: 0,
+          },
+        },
+      },
+
+      MuiListItem: {
+        styleOverrides: {
+          root: {
+            padding: 0,
+          },
+        },
+      },
     },
 
     spacing: 4,
@@ -214,6 +224,7 @@ function App() {
       <DownloadExtension />
       <FAQ />
       <Newsletter />
+      <Footer />
     </ThemeProvider>
   );
 }

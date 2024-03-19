@@ -95,7 +95,7 @@ const Newsletter = () => {
                 fontSize: "0.875rem",
                 letterSpacing: "0.015625rem",
                 lineHeight: "1.75rem",
-                color: alpha(theme.palette.darkBlue.main, 25),
+                color: alpha(theme.palette.darkBlue.main, 0.25),
               },
 
               flex: { md: "0 0 300px" },

@@ -1,17 +1,18 @@
 import { SvgIcon, SxProps } from "@mui/material";
+import { colors } from "../designSystem";
 
 type LogoSVGProps = {
-  circleFillColor: string;
-  bookmarkPathIconFillColor: string;
-  bookmarkTextFillColor: string;
+  circleFillColor?: string;
+  bookmarkPathIconFillColor?: string;
+  bookmarkTextFillColor?: string;
   sx: SxProps;
 };
 
 const LogoSVG = ({
-  circleFillColor,
-  bookmarkPathIconFillColor,
-  bookmarkTextFillColor,
-  sx,
+  circleFillColor = colors.primary,
+  bookmarkPathIconFillColor = "#FFF",
+  bookmarkTextFillColor = "#FFF",
+  sx = {},
 }: LogoSVGProps) => {
   return (
     <SvgIcon viewBox="0 0 149 25" sx={sx}>

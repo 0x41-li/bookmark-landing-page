@@ -37,7 +37,6 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
           sx={{ position: "relative", display: "flex", zIndex: "999" }}
         >
           <LogoSVG
-            aria-hidden
             circleFillColor={isMenuOpen ? "#FFF" : theme.palette.primary.main}
             bookmarkPathIconFillColor={
               isMenuOpen ? theme.palette.darkBlue.main : "#FFF"

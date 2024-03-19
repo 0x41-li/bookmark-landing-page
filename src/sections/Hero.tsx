@@ -45,6 +45,7 @@ const Hero = () => {
         direction={{ xs: "column", md: "row-reverse" }}
       >
         {/* Hero Illustration and blue background */}
+        {/* ! CLS: set a specifc height for the image  */}
         <Box
           sx={{
             position: "relative",

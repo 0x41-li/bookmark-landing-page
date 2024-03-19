@@ -1,4 +1,3 @@
-import React from "react";
 import FacebookIcon from "../assets/icons/FacebookIcon";
 import XIcon from "../assets/icons/XIcon";
 import { SxProps } from "@mui/material";
