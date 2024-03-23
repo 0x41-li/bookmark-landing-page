@@ -7,7 +7,6 @@ import {
   Tabs,
   Theme,
   Typography,
-  alpha,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -48,7 +47,7 @@ const Features = () => {
         maxWidth: "1104px",
       }}
     >
-      {/* Text */}
+      {/* heading & Text */}
       <Box sx={{ maxWidth: { md: "540px" }, marginInline: "auto" }}>
         <Typography variant="h2" textAlign="center">
           {featuresData.heading}
@@ -73,9 +72,10 @@ const Features = () => {
           ref={tabsElRef}
           value={tabsIndex}
           onChange={(_, i) => setTabsIndex(i)}
+          //
           orientation={IsMobile ? "vertical" : "horizontal"}
-          textColor="inherit"
           indicatorColor="secondary"
+          //
           TabIndicatorProps={{
             style: {
               top: IsMobile ? `${58 * (tabsIndex + 1) - 4}px` : "",
@@ -85,6 +85,7 @@ const Features = () => {
               translate: IsMobile ? "-50% 0" : "",
             },
           }}
+          //
           sx={{
             maxWidth: "730px",
             marginInline: "auto",
@@ -97,15 +98,21 @@ const Features = () => {
                 key={i}
                 value={i}
                 label={tab.tabText}
+                //
                 sx={{
-                  color: alpha(theme.palette.darkBlue.main, 0.75),
+                  color: theme.palette.darkBlue.main,
                   fontWeight: 400,
                   textTransform: "capitalize",
                   height: { xs: "58px", xl: "76px" },
                   maxWidth: "unset",
                   flex: IsMobile ? "0 0 1" : "1",
                   borderBottom: "1px solid rgba(73, 93, 207, 0.2001)",
-                  opacity: 0.75,
+                  opacity: tabsIndex == i ? 1 : 0.75,
+                  transition: "color ease-in-out 250ms",
+
+                  "&:hover": {
+                    color: theme.palette.secondary.main,
+                  },
 
                   "&.Mui-selected": {
                     color: theme.palette.darkBlue.main,
