@@ -1,3 +1,4 @@
+// Utilities
 import {
   Box,
   Button,
@@ -9,7 +10,11 @@ import {
   useTheme,
 } from "@mui/material";
 
+// data
 import data from "../data/data.json";
+
+// colors
+import { colors } from "../designSystem";
 
 const newsletterData = data.newsletter;
 
@@ -24,6 +29,7 @@ const Newsletter = () => {
         backgroundColor: theme.palette.primary.main,
       }}
     >
+      {/* Inner Wrapper */}
       <Box
         sx={{
           maxWidth: "442px",
@@ -104,14 +110,21 @@ const Newsletter = () => {
 
           <Button
             variant="contained"
+            color="secondary"
             sx={{
-              background: "#FA5959",
               width: { xs: "100%", md: "126px" },
               fontSize: "0.875rem",
               lineHeight: "1.75rem",
               letterSpacing: "0.015625rem",
               fontWeight: 500,
               paddingBlock: theme.spacing(2),
+
+              "&:hover": {
+                backgroundColor: "white",
+                border: `2px solid ${colors.secondary}`,
+
+                color: colors.secondary,
+              },
               paddingInline: "0 !important",
             }}
           >
