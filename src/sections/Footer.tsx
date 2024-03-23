@@ -1,4 +1,4 @@
-import { Box, Link, List, ListItem, Stack, Theme } from "@mui/material";
+import { Box, Container, Link, List, ListItem, Theme } from "@mui/material";
 import LogoSVG from "../components/LogoSVG";
 import { useTheme } from "@emotion/react";
 
@@ -15,71 +15,96 @@ const Footer = () => {
   const socialMediaIcons = footer["social-media"];
 
   return (
-    <Box
+    <Container
       sx={{
+        paddingBlock: { xs: theme.spacing(10), lg: theme.spacing(8) },
         backgroundColor: theme.palette.darkBlue.main,
-        paddingBlock: theme.spacing(10),
       }}
+      component="section"
     >
-      <Stack justifyContent="center" alignItems="center" sx={{}}>
-        {/* Logo */}
-        <Link
-          href="/"
-          aria-label="Logo of the website"
+      {/* Inner Wrapper */}
+      <Box
+        sx={{
+          maxWidth: "1110px",
+          marginInline: "auto",
+          display: "flex",
+          flexDirection: { xs: "column", lg: "row" },
+          justifyContent: { xs: "center", lg: "space-between" },
+          alignItems: { xs: "center", lg: "flex-start" },
+        }}
+      >
+        {/* Logo & Menu */}
+        <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", lg: "row" },
+            justifyContent: { xs: "center", lg: "space-between" },
+            gap: { lg: theme.spacing(15) },
           }}
         >
-          <LogoSVG
+          {/* Logo */}
+          <Link
+            href="/"
+            aria-label="Logo of the website"
             sx={{
-              width: "148px",
-              height: "25px",
+              display: "flex",
             }}
-          />
-        </Link>
+          >
+            <LogoSVG
+              sx={{
+                width: "148px",
+                height: "25px",
+              }}
+            />
+          </Link>
 
-        {/* Menu */}
-        <List
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.spacing(4),
-            marginBlockStart: theme.spacing(7.75),
-          }}
-        >
-          {menu.map((link) => {
-            return (
-              <ListItem sx={{ justifyContent: "center" }} key={link.text}>
-                <Link
-                  href={link.href}
-                  sx={{
-                    paddingBlock: theme.spacing(2),
-                    color: "#FFF",
-                    textDecoration: "unset",
-                    lineHeight: "1.0625rem",
-                    letterSpacing: "0.108125rem",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {link.text}
-                </Link>
-              </ListItem>
-            );
-          })}
-        </List>
+          {/* Menu */}
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", lg: "row" },
+              marginBlockStart: { xs: theme.spacing(7.75), lg: 0 },
+              gap: { xs: theme.spacing(4), lg: theme.spacing(11) },
+            }}
+          >
+            {menu.map((link) => {
+              return (
+                <ListItem sx={{ justifyContent: "center" }} key={link.text}>
+                  <Link
+                    href={link.href}
+                    sx={{
+                      paddingBlock: { xs: theme.spacing(2), lg: 0 },
+                      color: "#FFF",
+                      fontSize: { lg: "0.8125rem" },
+                      textDecoration: "unset",
+                      lineHeight: "1.0625rem",
+                      letterSpacing: "0.108125rem",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {link.text}
+                  </Link>
+                </ListItem>
+              );
+            })}
+          </List>
+        </Box>
 
         {/* Social Media Icon */}
         <List
           sx={{
             display: "flex",
-            gap: theme.spacing(6),
-            marginBlockStart: theme.spacing(8),
+            gap: { xs: theme.spacing(6), lg: theme.spacing(10) },
+            marginBlockStart: { xs: theme.spacing(8), lg: 0 },
           }}
         >
           {socialMediaIcons.map((item) => {
             return (
               <ListItem key={item.name}>
-                <Link href={item.href} sx={{ padding: theme.spacing(2) }}>
+                <Link
+                  href={item.href}
+                  sx={{ padding: { xs: theme.spacing(2), lg: 0 } }}
+                >
                   <SocialMediaIcon
                     name={item.name}
                     sx={{ display: "block", color: "#FFF", fontSize: 24 }}
@@ -89,8 +114,8 @@ const Footer = () => {
             );
           })}
         </List>
-      </Stack>
-    </Box>
+      </Box>
+    </Container>
   );
 };
 
