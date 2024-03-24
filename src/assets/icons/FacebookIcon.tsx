@@ -15,7 +15,7 @@ const FacebookIcon = createSvgIcon(
       fill="white"
     />
   </svg>,
-  "FacebookIconMe"
+  "FacebookIcon"
 );
 
 export default FacebookIcon;

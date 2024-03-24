@@ -16,6 +16,16 @@
     url("/assets/fonts/Rubik/Rubik-Medium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: local("Rubik"), local("Rubik-MediumItalic"),
+    url("/assets/fonts/Rubik/Rubik-MediumItalic.ttf") format("truetype");
+}
+
+// General
 img {
   max-width: 100%;
 }
