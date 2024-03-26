@@ -119,7 +119,7 @@
     "form": {
       "input-placeholder-text": "Enter your email address",
       "button-text": "Contact Us",
-      "error-text": "Whoops, make sure it’s an emailWhoops, make sure it’s an email"
+      "error-text": "Whoops, make sure it’s an email"
     }
   },
   "footer": {

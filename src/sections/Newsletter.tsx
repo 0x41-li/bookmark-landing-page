@@ -32,6 +32,7 @@ const Newsletter = () => {
   const [formData, setFormData] = useState<FormState>({
     email: "",
   });
+
   const [isEmailValid, setIsEmailValid] = useState<boolean | null>(true);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
@@ -59,6 +60,14 @@ const Newsletter = () => {
       sx={{
         marginBlockStart: { xs: theme.spacing(30.5), md: theme.spacing(37.5) },
         backgroundColor: theme.palette.primary.main,
+        paddingBlockStart: {
+          xs: theme.spacing(15),
+          md: `${theme.spacing(14.5)} ${theme.spacing(18.5)}`,
+        },
+        paddingBlockEnd: {
+          xs: isEmailValid ? theme.spacing(15) : theme.spacing(10),
+          lg: theme.spacing(18),
+        },
       }}
     >
       {/* Inner Wrapper */}
@@ -66,13 +75,6 @@ const Newsletter = () => {
         sx={{
           maxWidth: "442px",
           marginInline: "auto",
-          paddingBlockStart: {
-            xs: theme.spacing(15),
-            md: `${theme.spacing(14.5)} ${theme.spacing(18.5)}`,
-          },
-          paddingBlockEnd: {
-            xs: isEmailValid ? theme.spacing(15) : theme.spacing(10),
-          },
         }}
       >
         {/* Heading Text */}
@@ -123,7 +125,7 @@ const Newsletter = () => {
             justifyContent: { md: "space-between" },
           }}
         >
-          {/* Input */}
+          {/* Input Box */}
           <Box
             sx={{
               position: "relative",
@@ -170,6 +172,7 @@ const Newsletter = () => {
               onChange={handleChange}
             />
 
+            {/* Error Feedback */}
             {!isEmailValid && (
               <Box
                 sx={{
@@ -190,8 +193,8 @@ const Newsletter = () => {
                 <Typography
                   variant="body1"
                   sx={{
-                    fontSize: theme.spacing(2.5),
-                    lineHeight: theme.spacing(3),
+                    fontSize: "0.625rem !important",
+                    lineHeight: "0.75rem !important",
                     fontStyle: "italic",
                     fontWeight: 500,
                     letterSpacing: "0.0156rem",
@@ -205,7 +208,7 @@ const Newsletter = () => {
                     color: "#FFF",
                   }}
                 >
-                  Whoops, make sure it’s an email
+                  {newsletterData.form["error-text"]}
                 </Typography>
               </Box>
             )}
