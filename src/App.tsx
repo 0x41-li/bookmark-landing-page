@@ -204,14 +204,11 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // prevent scrolling when menu open on mobile devices
-  // ! Overflow hidden will not be removed if the menu was open in a small size device, and the device size changed to a tablet+ size, this can be done using dev tool
-
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    // ! Overflow hidden will not be removed if the menu was open in a small size device, and the device size changed to a tablet+ size, this can be done using dev tool
+    isMenuOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
   }, [isMenuOpen]);
 
   return (
