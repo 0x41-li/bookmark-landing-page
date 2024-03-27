@@ -240,6 +240,11 @@ const Features = () => {
               lg: theme.spacing(16),
               xl: theme.spacing(31),
             }}
+            sx={{
+              "& picture": {
+                maxWidth: "486px",
+              },
+            }}
           >
             {/* Illusttration */}
             <Box
@@ -311,6 +316,9 @@ const Features = () => {
             <Box
               sx={{
                 flex: { md: "1" },
+                "& picture": {
+                  maxWidth: "486px",
+                },
               }}
             >
               <picture>

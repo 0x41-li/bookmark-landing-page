@@ -19,7 +19,7 @@ const DownloadExtension = () => {
     <Container
       component="section"
       sx={{
-        marginBlockStart: { xs: theme.spacing(8.5), md: theme.spacing(44) },
+        marginBlockStart: { xs: theme.spacing(8.5), md: theme.spacing(41) },
         maxWidth: "1104px",
       }}
     >
