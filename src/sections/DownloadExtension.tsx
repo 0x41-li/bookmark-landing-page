@@ -28,6 +28,7 @@ const DownloadExtension = () => {
         <Typography textAlign="center" variant="h2">
           Download the extension
         </Typography>
+
         <Typography
           textAlign="center"
           variant="body1"

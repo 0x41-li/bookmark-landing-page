@@ -23,12 +23,15 @@ import data from "../data/data.json";
 const Features = () => {
   const theme = useTheme() as Theme;
 
+  // <Tabs> component
   const tabsElRef = useRef<HTMLDivElement>(null);
   const [tabsElWidth, setTabsElWidth] = useState(0);
   const [tabsIndex, setTabsIndex] = useState(0);
 
+  //
   const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  // section data
   const featuresData = data.features;
 
   useEffect(() => {
@@ -144,13 +147,16 @@ const Features = () => {
           sx={{
             translate: `${tabsIndex * -100}%`,
             transition: "translate 400ms ease-in-out",
-            maxWidth: { xk: "1031px" },
             "& > *": {
               flex: "0 0 100%",
               paddingInline: { xs: theme.spacing(8), xl: 0 },
             },
             "& img": {
+              display: "block",
               width: "100%",
+            },
+            "& picture": {
+              display: "block",
             },
           }}
         >
@@ -164,17 +170,11 @@ const Features = () => {
               lg: theme.spacing(16),
               xl: 0,
             }}
-            sx={{
-              "&>*": { flex: { md: "1", xl: "0 0 auto" } },
-            }}
           >
             {/* Illustration */}
             <Box
               sx={{
-                "& img, & picture": {
-                  display: "block",
-                  marginInline: "auto",
-                },
+                flex: { md: "1" },
                 "& picture": {
                   maxWidth: "536px",
                 },
@@ -234,7 +234,6 @@ const Features = () => {
           {/* Slide */}
           <Stack
             flexDirection={{ md: "row" }}
-            sx={{ "&>*": { flex: { md: "1" } } }}
             alignItems={{ md: "center", xl: "unset" }}
             gap={{
               md: theme.spacing(8),
@@ -245,13 +244,7 @@ const Features = () => {
             {/* Illusttration */}
             <Box
               sx={{
-                "& img, & picture": {
-                  display: "block",
-                  marginInline: "auto",
-                },
-                "& picture": {
-                  maxWidth: "536px",
-                },
+                flex: { md: "1" },
               }}
             >
               <picture>
@@ -307,7 +300,6 @@ const Features = () => {
           {/* Slide */}
           <Stack
             flexDirection={{ md: "row" }}
-            sx={{ "&>*": { flex: { md: "1" } } }}
             alignItems={{ md: "center", xl: "unset" }}
             gap={{
               md: theme.spacing(8),
@@ -318,13 +310,7 @@ const Features = () => {
             {/* Illustration */}
             <Box
               sx={{
-                "& img, & picture": {
-                  display: "block",
-                  marginInline: "auto",
-                },
-                "& picture": {
-                  maxWidth: "536px",
-                },
+                flex: { md: "1" },
               }}
             >
               <picture>
