@@ -142,25 +142,30 @@ const Features = () => {
         <Stack
           flexDirection="row"
           sx={{
+            translate: `${tabsIndex * -100}%`,
+            transition: "translate 400ms ease-in-out",
+            maxWidth: { xk: "1031px" },
             "& > *": {
               flex: "0 0 100%",
               paddingInline: { xs: theme.spacing(8), xl: 0 },
             },
-            translate: `${tabsIndex * -100}%`,
-            transition: "translate 400ms ease-in-out",
-            maxWidth: { xk: "1031px" },
+            "& img": {
+              width: "100%",
+            },
           }}
         >
           {/* Slide */}
           <Stack
             flexDirection={{ md: "row" }}
-            sx={{ "&>*": { flex: { md: "1", xl: "0 0 auto" } } }}
             alignItems={{ md: "center", xl: "unset" }}
             justifyContent={{ xl: "space-between" }}
             gap={{
               md: theme.spacing(8),
               lg: theme.spacing(16),
               xl: 0,
+            }}
+            sx={{
+              "&>*": { flex: { md: "1", xl: "0 0 auto" } },
             }}
           >
             {/* Illustration */}

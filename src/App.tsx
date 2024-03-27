@@ -4,9 +4,6 @@ import { useEffect, useState } from "react";
 import { CssBaseline } from "@mui/material";
 import { colors } from "./designSystem";
 
-// sass
-import "./sass/app.scss";
-
 // Website parts
 import Header from "./shared/Header.tsx";
 import Hero from "./sections/Hero.tsx";
@@ -107,6 +104,37 @@ function App() {
     },
 
     components: {
+      MuiCssBaseline: {
+        styleOverrides: `
+          @font-face {
+            font-family: "Rubik";
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: local("Rubik"), local("Rubik-Regular"),
+              url("/assets/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+          }
+
+          @font-face {
+            font-family: "Rubik";
+            font-style: normal;
+            font-display: swap;
+            font-weight: 500;
+            src: local("Rubik"), local("Rubik-Medium"),
+              url("/assets/fonts/Rubik/Rubik-Medium.ttf") format("truetype");
+          }
+
+          @font-face {
+            font-family: "Rubik";
+            font-style: italic;
+            font-display: swap;
+            font-weight: 500;
+            src: local("Rubik"), local("Rubik-MediumItalic"),
+              url("/assets/fonts/Rubik/Rubik-MediumItalic.ttf") format("truetype");
+          }
+        `,
+      },
+
       MuiContainer: {
         defaultProps: {
           maxWidth: false,

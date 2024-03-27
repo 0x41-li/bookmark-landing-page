@@ -32,6 +32,7 @@ const Hero = () => {
   const theme = useTheme() as Theme;
 
   const heroData = data.hero;
+
   return (
     <Container
       sx={{
@@ -45,7 +46,6 @@ const Hero = () => {
         direction={{ xs: "column", md: "row-reverse" }}
       >
         {/* Hero Illustration and blue background */}
-        {/* ! CLS: set a specifc height for the image  */}
         <Box
           sx={{
             position: "relative",
@@ -54,7 +54,27 @@ const Hero = () => {
             },
           }}
         >
-          <picture className="hero-sec__picture">
+          {/* Picture */}
+          <Box
+            component="picture"
+            sx={{
+              position: "relative",
+              display: "block",
+              width: "100%",
+              maxWidth: { xs: "375px", xl: "574px" },
+              height: "209px",
+              aspectRatio: "313 / 209",
+              marginInline: "auto",
+              zIndex: 50,
+
+              [theme.breakpoints.up(1440)]: {
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "574px",
+              },
+            }}
+          >
             {/* SVG */}
             <source
               type="image/svg+xml"
@@ -76,13 +96,24 @@ const Hero = () => {
             />
 
             {/* PNG format */}
-            <img
+            <Box
+              component="img"
               srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
               src={bookmarkInterfaceIllustration575wPNG}
               sizes="(max-width: 425px) 308px, 574px"
               alt="Bookmark web interface illustration"
+              height="209px"
+              width="313px"
+              sx={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                boxShadow: "0px 30px 40px 0px rgba(47, 59, 129, 0.2)",
+                borderRadius: "5%",
+                marginInline: "auto",
+              }}
             />
-          </picture>
+          </Box>
         </Box>
 
         {/* Hero Text */}
