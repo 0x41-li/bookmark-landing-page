@@ -102,8 +102,6 @@ const Hero = () => {
               src={bookmarkInterfaceIllustration575wPNG}
               sizes="(max-width: 425px) 308px, 574px"
               alt="Bookmark web interface illustration"
-              height="209px"
-              width="313px"
               sx={{
                 display: "block",
                 width: "100%",
