@@ -170,16 +170,19 @@ const Features = () => {
               lg: theme.spacing(16),
               xl: 0,
             }}
+            sx={{
+              "& picture": {
+                maxWidth: "536px",
+              },
+              "&>*": {
+                sm: {
+                  flex: "1",
+                },
+              },
+            }}
           >
             {/* Illustration */}
-            <Box
-              sx={{
-                flex: { md: "1" },
-                "& picture": {
-                  maxWidth: "536px",
-                },
-              }}
-            >
+            <Box>
               <picture>
                 <source srcSet={simpleBookmarkingSVG} type="image/svg+xml" />
                 <img src="" alt="" />
@@ -244,14 +247,15 @@ const Features = () => {
               "& picture": {
                 maxWidth: "486px",
               },
+              "&>*": {
+                sm: {
+                  flex: "1",
+                },
+              },
             }}
           >
             {/* Illusttration */}
-            <Box
-              sx={{
-                flex: { md: "1" },
-              }}
-            >
+            <Box>
               <picture>
                 <source srcSet={speedySearchingSVG} type="image/svg+xml" />
                 <img src="" alt="" />
@@ -311,16 +315,20 @@ const Features = () => {
               lg: theme.spacing(16),
               xl: theme.spacing(31),
             }}
+            //
+            sx={{
+              "& picture": {
+                maxWidth: "486px",
+              },
+              "&>*": {
+                sm: {
+                  flex: "1",
+                },
+              },
+            }}
           >
             {/* Illustration */}
-            <Box
-              sx={{
-                flex: { md: "1" },
-                "& picture": {
-                  maxWidth: "486px",
-                },
-              }}
-            >
+            <Box>
               <picture>
                 <source srcSet={easySharingSVG} type="image/svg+xml" />
                 <img src="" alt="" />
