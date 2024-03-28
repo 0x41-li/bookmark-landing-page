@@ -85,14 +85,14 @@ const Hero = () => {
             <source
               type="image/avif"
               srcSet={`${bookmarkInterfaceIllustration309wAVIF} 309w, ${bookmarkInterfaceIllustration575wAVIF} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
+              sizes="(max-width: 425px) 309px, 575px"
             />
 
             {/* WEBP format */}
             <source
               type="image/webp"
               srcSet={`${bookmarkInterfaceIllustration309wWEBP} 309w, ${bookmarkInterfaceIllustration575wWEBP} 575w`}
-              sizes="(max-width: 425px) 308px, 574px"
+              sizes="(max-width: 425px) 309px, 575px"
             />
 
             {/* PNG format */}
@@ -100,7 +100,7 @@ const Hero = () => {
               component="img"
               srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
               src={bookmarkInterfaceIllustration575wPNG}
-              sizes="(max-width: 425px) 308px, 574px"
+              sizes="(max-width: 425px) 309px, 575px"
               alt="Bookmark web interface illustration"
               sx={{
                 display: "block",
@@ -110,6 +110,7 @@ const Hero = () => {
                 borderRadius: "5%",
                 marginInline: "auto",
               }}
+              loading="lazy"
             />
           </Box>
         </Box>
