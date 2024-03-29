@@ -24,7 +24,17 @@ import simpleBookmarking538wPNG from "../assets/images/features/simple-bookmarki
 import simpleBookmarking538wWEBP from "../assets/images/features/simple-bookmarking-536w.webp";
 import simpleBookmarking538wAVIF from "../assets/images/features/simple-bookmarking-536w.avif";
 
+// ------ Speedy Searching illustrationn
 import speedySearchingSVG from "../assets/images/features/speedy-searching.svg";
+
+import speedySearch321wPNG from "../assets/images/features/speedy-searching-321w.png";
+import speedySearch321wWEBP from "../assets/images/features/speedy-searching-321w.webp";
+import speedySearch321wAVIF from "../assets/images/features/speedy-searching-321w.avif";
+
+import speedySearch478wPNG from "../assets/images/features/speedy-searching-478w.png";
+import speedySearch478wWEBP from "../assets/images/features/speedy-searching-478w.webp";
+import speedySearch478wAVIF from "../assets/images/features/speedy-searching-478w.avif";
+
 import easySharingSVG from "../assets/images/features/easy-sharing.svg";
 // ---- Images import ----
 
@@ -294,8 +304,33 @@ const Features = () => {
             {/* Illusttration */}
             <Box>
               <picture>
+                {/* SVG format  */}
                 <source srcSet={speedySearchingSVG} type="image/svg+xml" />
-                <img src="" alt="" />
+
+                {/* Avif format */}
+                <source
+                  srcSet={`${speedySearch321wAVIF} 321w, ${speedySearch478wAVIF} 478w`}
+                  sizes="(max-width: 425px) 321px, 478px"
+                  type="image/avif"
+                />
+
+                {/* Webp */}
+                <source
+                  srcSet={`${speedySearch321wWEBP} 321w, ${speedySearch478wWEBP} 478w`}
+                  sizes="(max-width: 425px) 321px, 478px"
+                  type="image/webp"
+                />
+
+                {/* PNG */}
+                <img
+                  srcSet={`${speedySearch321wPNG} 321w, ${speedySearch478wPNG} 478w`}
+                  sizes="(max-width: 425px) 321px, 478px"
+                  src={speedySearch321wPNG}
+                  alt="Simple Bookmarking Illustration"
+                  width="321"
+                  height="277"
+                  loading="lazy"
+                />
               </picture>
             </Box>
 
