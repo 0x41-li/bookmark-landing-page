@@ -55,7 +55,7 @@ const Features = () => {
   // <Tabs> component
   const tabsElRef = useRef<HTMLDivElement>(null);
   const [tabsElWidth, setTabsElWidth] = useState(0);
-  const [tabsIndex, setTabsIndex] = useState(2);
+  const [tabsIndex, setTabsIndex] = useState(0);
 
   //
   const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -180,13 +180,14 @@ const Features = () => {
               flex: "0 0 100%",
               paddingInline: { xs: theme.spacing(8), xl: 0 },
             },
+            "& picture": {
+              display: "block",
+              marginInline: "auto",
+            },
             "& img": {
               display: "block",
               width: "100%",
               height: "auto",
-            },
-            "& picture": {
-              display: "block",
             },
           }}
         >
