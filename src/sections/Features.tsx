@@ -35,7 +35,15 @@ import speedySearch478wPNG from "../assets/images/features/speedy-searching-478w
 import speedySearch478wWEBP from "../assets/images/features/speedy-searching-478w.webp";
 import speedySearch478wAVIF from "../assets/images/features/speedy-searching-478w.avif";
 
+// ------ Easy Sharing illustrationn
 import easySharingSVG from "../assets/images/features/easy-sharing.svg";
+import easySharing311wPNG from "../assets/images/features/easy-sharing-311w.png";
+import easySharing311wWEBP from "../assets/images/features/easy-sharing-311w.webp";
+import easySharing311wAVIF from "../assets/images/features/easy-sharing-311w.avif";
+
+import easySharing440wPNG from "../assets/images/features/easy-sharing-440w.png";
+import easySharing440wWEBP from "../assets/images/features/easy-sharing-440w.webp";
+import easySharing440wAVIF from "../assets/images/features/easy-sharing-440w.avif";
 // ---- Images import ----
 
 // data
@@ -47,7 +55,7 @@ const Features = () => {
   // <Tabs> component
   const tabsElRef = useRef<HTMLDivElement>(null);
   const [tabsElWidth, setTabsElWidth] = useState(0);
-  const [tabsIndex, setTabsIndex] = useState(0);
+  const [tabsIndex, setTabsIndex] = useState(2);
 
   //
   const IsMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -402,8 +410,33 @@ const Features = () => {
             {/* Illustration */}
             <Box>
               <picture>
+                {/* SVG format  */}
                 <source srcSet={easySharingSVG} type="image/svg+xml" />
-                <img src="" alt="" />
+
+                {/* Avif format */}
+                <source
+                  srcSet={`${easySharing311wAVIF} 311w, ${easySharing440wAVIF} 440w`}
+                  sizes="(max-width: 425px) 311px, 440px"
+                  type="image/avif"
+                />
+
+                {/* Webp */}
+                <source
+                  srcSet={`${easySharing311wWEBP} 311w, ${easySharing440wWEBP} 440w`}
+                  sizes="(max-width: 425px) 311px, 440px"
+                  type="image/webp"
+                />
+
+                {/* PNG */}
+                <img
+                  srcSet={`${easySharing311wPNG} 311w, ${easySharing440wPNG} 440w`}
+                  sizes="(max-width: 425px) 311px, 440px"
+                  src={easySharing311wPNG}
+                  alt="Simple Bookmarking Illustration"
+                  width="311"
+                  height="269"
+                  loading="lazy"
+                />
               </picture>
             </Box>
 
