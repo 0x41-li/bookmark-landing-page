@@ -12,10 +12,21 @@ import {
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
-// images/illustrations
+// ---- Images import ----
+// ------ Simple Bookmarking illustrationn
 import simpleBookmarkingSVG from "../assets/images/features/simple-bookmarking.svg";
+
+import simpleBookmarking311wPNG from "../assets/images/features/simple-bookmarking-311w.png";
+import simpleBookmarking311wWEBP from "../assets/images/features/simple-bookmarking-311w.webp";
+import simpleBookmarking311wAVIF from "../assets/images/features/simple-bookmarking-311w.webp";
+
+import simpleBookmarking538wPNG from "../assets/images/features/simple-bookmarking-536w.png";
+import simpleBookmarking538wWEBP from "../assets/images/features/simple-bookmarking-536w.webp";
+import simpleBookmarking538wAVIF from "../assets/images/features/simple-bookmarking-536w.avif";
+
 import speedySearchingSVG from "../assets/images/features/speedy-searching.svg";
 import easySharingSVG from "../assets/images/features/easy-sharing.svg";
+// ---- Images import ----
 
 // data
 import data from "../data/data.json";
@@ -154,6 +165,7 @@ const Features = () => {
             "& img": {
               display: "block",
               width: "100%",
+              height: "auto",
             },
             "& picture": {
               display: "block",
@@ -184,8 +196,33 @@ const Features = () => {
             {/* Illustration */}
             <Box>
               <picture>
+                {/* SVG format  */}
                 <source srcSet={simpleBookmarkingSVG} type="image/svg+xml" />
-                <img src="" alt="" />
+
+                {/* Avif format */}
+                <source
+                  srcSet={`${simpleBookmarking311wAVIF} 311w, ${simpleBookmarking538wAVIF} 538w`}
+                  sizes="(max-width: 425px) 311px, 538px"
+                  type="image/avif"
+                />
+
+                {/* Webp */}
+                <source
+                  srcSet={`${simpleBookmarking311wWEBP} 311w, ${simpleBookmarking538wWEBP} 538w`}
+                  sizes="(max-width: 425px) 311px, 538px"
+                  type="image/webp"
+                />
+
+                {/* PNG */}
+                <img
+                  srcSet={`${simpleBookmarking311wPNG} 311w, ${simpleBookmarking538wPNG} 538w`}
+                  sizes="(max-width: 425px) 311px, 538px"
+                  src={simpleBookmarking538wPNG}
+                  alt="Simple Bookmarking Illustration"
+                  width="311"
+                  height="201"
+                  loading="lazy"
+                />
               </picture>
             </Box>
 

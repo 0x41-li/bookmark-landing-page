@@ -67,6 +67,15 @@ const Hero = () => {
               marginInline: "auto",
               zIndex: 50,
 
+              "& img": {
+                display: "block",
+                width: "100%",
+                height: "auto",
+                boxShadow: "0px 30px 40px 0px rgba(47, 59, 129, 0.2)",
+                borderRadius: "5%",
+                marginInline: "auto",
+              },
+
               [theme.breakpoints.up(1440)]: {
                 position: "absolute",
                 top: 0,
@@ -96,20 +105,13 @@ const Hero = () => {
             />
 
             {/* PNG format */}
-            <Box
-              component="img"
+            <img
               srcSet={`${bookmarkInterfaceIllustration575wPNG} 575w, ${bookmarkInterfaceIllustration309wPNG} 309w`}
               src={bookmarkInterfaceIllustration575wPNG}
               sizes="(max-width: 425px) 309px, 575px"
               alt="Bookmark web interface illustration"
-              sx={{
-                display: "block",
-                width: "100%",
-                height: "auto",
-                boxShadow: "0px 30px 40px 0px rgba(47, 59, 129, 0.2)",
-                borderRadius: "5%",
-                marginInline: "auto",
-              }}
+              width="309"
+              height="206"
               loading="lazy"
             />
           </Box>
