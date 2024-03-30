@@ -237,6 +237,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                     sx={{
                       paddingBlock: { xs: theme.spacing(6), md: "0" },
                       width: "100%",
+
                       borderTop: {
                         xs: "1px solid rgba(255, 255, 255, 0.15)",
                         md: "none",
@@ -253,7 +254,9 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                       opacity: { xs: isMenuOpen ? "1" : "0", md: "1" },
 
                       transition: isMenuOpen
-                        ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
+                        ? `opacity 400ms ease-in-out ${
+                            900 + (i + 2) * 100
+                          }ms, color 200ms ease-in-out`
                         : `opacity 400ms ease-in-out ${
                             1000 - (i + 2) * 100
                           }ms, color 200ms ease-in-out`,
@@ -306,7 +309,15 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                   >
                     <SocialMediaIcon
                       name={item.name}
-                      sx={{ color: "#FFF", fontSize: 24 }}
+                      sx={{
+                        color: "#FFF",
+                        fontSize: 24,
+                        transition: "color 200ms ease-in-out",
+
+                        "&:hover": {
+                          color: theme.palette.secondary.main,
+                        },
+                      }}
                     />
                   </Link>
                 );
