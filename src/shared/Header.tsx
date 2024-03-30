@@ -1,12 +1,12 @@
 import { Box, Container, Link, Stack, Theme } from "@mui/material";
 import { useTheme } from "@emotion/react";
+import SocialMediaIcon from "../components/SocialMediaIcon";
 
 // Assets
 import LogoSVG from "../components/LogoSVG";
 
-// Header Items
+// data
 import data from "../data/data.json";
-import SocialMediaIcon from "../components/SocialMediaIcon";
 
 type HeaderProps = {
   isMenuOpen: boolean;
@@ -184,8 +184,10 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                           xs: theme.spacing(4),
                           md: theme.spacing(2.5),
                         },
+
                         paddingInline: { xs: "0", md: theme.spacing(7.5) },
                         width: "100%",
+
                         border: {
                           xs: "2px solid #FFF",
                           md: "2px solid transparent",
@@ -211,7 +213,9 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
                         boxShadow: "0 8px 8px -4px rgba(73, 93, 207, 0.20)",
 
                         transition: isMenuOpen
-                          ? `opacity 400ms ease-in-out ${900 + (i + 2) * 100}ms`
+                          ? `opacity 400ms ease-in-out ${
+                              900 + (i + 2) * 100
+                            }ms, background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out`
                           : `opacity 400ms ease-in-out ${
                               1000 - (i + 2) * 100
                             }ms, background-color 200ms ease-in-out, color 200ms ease-in-out, border-color 200ms ease-in-out`,
