@@ -182,7 +182,7 @@ const Features = () => {
             },
             "& picture": {
               display: "block",
-              marginInline: "auto",
+              marginInline: { xs: "auto", lg: "unset" },
             },
             "& img": {
               display: "block",
@@ -203,7 +203,7 @@ const Features = () => {
             }}
             sx={{
               "& picture": {
-                maxWidth: "536px",
+                maxWidth: { xs: "375px", md: "536px" },
               },
               "&>*": {
                 sm: {
@@ -301,7 +301,7 @@ const Features = () => {
             }}
             sx={{
               "& picture": {
-                maxWidth: "486px",
+                maxWidth: { xs: "375px", md: "486px" },
               },
               "&>*": {
                 sm: {
@@ -399,7 +399,7 @@ const Features = () => {
             //
             sx={{
               "& picture": {
-                maxWidth: "486px",
+                maxWidth: { xs: "375px", md: "486px" },
               },
               "&>*": {
                 sm: {
