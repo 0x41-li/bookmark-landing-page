@@ -10,6 +10,8 @@ import data from "../data/data.json";
 
 const Footer = () => {
   const theme = useTheme() as Theme;
+
+  // data
   const footer = data.footer;
   const menu = footer.menu;
   const socialMediaIcons = footer["social-media"];
@@ -73,13 +75,20 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     sx={{
-                      paddingBlock: { xs: theme.spacing(2), lg: 0 },
                       color: "#FFF",
                       fontSize: { lg: "0.8125rem" },
                       textDecoration: "unset",
                       lineHeight: "1.0625rem",
                       letterSpacing: "0.108125rem",
                       textTransform: "uppercase",
+
+                      paddingBlock: { xs: theme.spacing(2), lg: 0 },
+
+                      transition: "color 200ms ease-in-out",
+
+                      "&:hover": {
+                        color: theme.palette.secondary.main,
+                      },
                     }}
                   >
                     {link.text}
@@ -107,7 +116,17 @@ const Footer = () => {
                 >
                   <SocialMediaIcon
                     name={item.name}
-                    sx={{ display: "block", color: "#FFF", fontSize: 24 }}
+                    sx={{
+                      display: "block",
+                      color: "#FFF",
+                      fontSize: 24,
+
+                      transition: "color 200ms ease-in-out",
+
+                      "&:hover": {
+                        color: theme.palette.secondary.main,
+                      },
+                    }}
                   />
                 </Link>
               </ListItem>
