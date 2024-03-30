@@ -8,9 +8,25 @@ import {
   useTheme,
 } from "@mui/material";
 
-import chromeSVG from "../assets/logos/chrome.svg";
-import FirefoxSVG from "../assets/logos/firefox.svg";
-import OperaSVG from "../assets/logos/opera.svg";
+// ---- Images import ----
+// ------ Chrome logo
+import chromeSVG from "../assets/images/download-extension/chrome.svg";
+import chromeAVIF from "../assets/images/download-extension/chrome.avif";
+import chromeWEBP from "../assets/images/download-extension/chrome.webp";
+import chromePNG from "../assets/images/download-extension/chrome.png";
+
+// ------ Firefox logo
+import firefoxSVG from "../assets/images/download-extension/firefox.svg";
+import firefoxAVIF from "../assets/images/download-extension/firefox.avif";
+import firefoxWEBP from "../assets/images/download-extension/firefox.webp";
+import firefoxPNG from "../assets/images/download-extension/firefox.png";
+
+// ------ Opera logo
+import operaSVG from "../assets/images/download-extension/opera.svg";
+import operaAVIF from "../assets/images/download-extension/opera.avif";
+import operaWEBP from "../assets/images/download-extension/opera.webp";
+import operaPNG from "../assets/images/download-extension/opera.png";
+// ---- Images import ----
 
 const DownloadExtension = () => {
   const theme = useTheme() as Theme;
@@ -79,7 +95,18 @@ const DownloadExtension = () => {
           >
             <picture>
               <source srcSet={chromeSVG} type="image/svg+xml" />
-              <img src="#" alt="" />
+
+              <source srcSet={chromeAVIF} type="image/avif" />
+
+              <source srcSet={chromeWEBP} type="image/webp" />
+
+              <img
+                src={chromePNG}
+                width="102"
+                height="100"
+                alt="Chrome Logo"
+                loading="lazy"
+              />
             </picture>
           </Box>
 
@@ -164,8 +191,18 @@ const DownloadExtension = () => {
             }}
           >
             <picture>
-              <source srcSet={FirefoxSVG} type="image/svg+xml" />
-              <img src="#" alt="" />
+              <source srcSet={firefoxSVG} type="image/svg+xml" />
+
+              <source srcSet={firefoxAVIF} type="image/avif" />
+
+              <source srcSet={firefoxWEBP} type="image/webp" />
+
+              <img
+                src={firefoxPNG}
+                width="105"
+                height="100"
+                alt="Firefox logo"
+              />
             </picture>
           </Box>
 
@@ -250,8 +287,13 @@ const DownloadExtension = () => {
             }}
           >
             <picture>
-              <source srcSet={OperaSVG} type="image/svg+xml" />
-              <img src="#" alt="" />
+              <source srcSet={operaSVG} type="image/svg+xml" />
+
+              <source srcSet={operaAVIF} type="image/avif" />
+
+              <source srcSet={operaWEBP} type="image/webp" />
+
+              <img src={operaPNG} width="96" height="100" alt="Opera Logo" />
             </picture>
           </Box>
 
