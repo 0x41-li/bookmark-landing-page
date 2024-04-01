@@ -76,6 +76,10 @@ const Hero = () => {
               [theme.breakpoints.up(1280)]: {
                 right: `calc((1104px - 100vw) / 2)`,
               },
+
+              [theme.breakpoints.up(2000)]: {
+                display: "none",
+              },
             }}
           >
             <Box
