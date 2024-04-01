@@ -54,40 +54,69 @@ const Hero = () => {
             },
           }}
         >
+          {/* Blue box */}
           <Box
             sx={{
               position: "absolute",
               top: "0",
-              left: "-32px",
-              right: "-32px",
-              bottom: "-48px",
+              left: { xs: theme.spacing(-8), lg: 0 },
+              right: {
+                xs: theme.spacing(-8),
+                lg: theme.spacing(-16),
+              },
+
+              bottom: { xs: "-48px", lg: "-119px" },
 
               overflow: "hidden",
+
+              [theme.breakpoints.between(1104, 1280)]: {
+                right: `calc((1104px - 100vw) / 2 - 64px)`,
+              },
+
+              [theme.breakpoints.up(1280)]: {
+                right: `calc((1104px - 100vw) / 2)`,
+              },
             }}
           >
             <Box
               sx={{
-                paddingInline: "32px",
+                paddingInlineStart: { xs: theme.spacing(8), lg: 0 },
+                paddingInlineEnd: {
+                  xs: theme.spacing(8),
+                  lg: theme.spacing(16),
+                },
+
+                [theme.breakpoints.up(1104)]: {
+                  paddingInlineEnd: `calc((100vw - 1104px ) / 2 + 64px)`,
+                },
+
+                [theme.breakpoints.up(1280)]: {
+                  paddingInlineEnd: `calc((100vw - 1104px ) / 2)`,
+                },
               }}
             >
               <Box
                 sx={{
                   position: "relative",
                   width: "100%",
-                  maxWidth: "375px",
+                  maxWidth: { xs: "375px", xl: "574px" },
                   aspectRatio: "auto 309 / 206",
                   marginInline: "auto",
+
+                  [theme.breakpoints.up(1440)]: {
+                    width: "574px",
+                  },
                 }}
               >
                 <Box
                   sx={{
                     position: "absolute",
-                    bottom: "-48px",
-                    left: "36px",
+                    bottom: { xs: "-48px", xl: "-101px" },
+                    left: { xs: "36px", xl: "152px" },
 
                     background: theme.palette.primary.main,
 
-                    height: "203px",
+                    height: { xs: "203px", xl: "352px" },
                     width: "1000px",
                     borderRadius: "500px",
                   }}
