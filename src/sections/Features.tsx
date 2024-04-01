@@ -165,6 +165,7 @@ const Features = () => {
       {/* Slider Out Wrapper */}
       <Box
         sx={{
+          position: "relative",
           marginInline: { xs: theme.spacing(-8), xl: 0 },
           marginBlockStart: theme.spacing(18),
           overflow: "hidden",
@@ -212,8 +213,54 @@ const Features = () => {
               },
             }}
           >
-            {/* Illustration */}
-            <Box>
+            {/* Illustration % blue box behind it */}
+            <Box sx={{ position: "relative" }}>
+              {/* Blue box */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  left: { xs: theme.spacing(-8) },
+                  right: { xs: theme.spacing(-8) },
+                  bottom: { xs: "-37px" },
+
+                  overflow: "hidden",
+
+                  zIndex: -50,
+                }}
+              >
+                <Box
+                  sx={{
+                    paddingInline: theme.spacing(8),
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      maxWidth: { xs: "375px" },
+                      aspectRatio: "311 / 201",
+                      marginInline: "auto",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: { xs: "-37px" },
+                        right: { xs: "35px" },
+
+                        background: theme.palette.primary.main,
+
+                        height: { xs: "203px", xl: "352px" },
+                        width: "1000px",
+
+                        borderRadius: "500px",
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+
               <picture>
                 {/* SVG format  */}
                 <source srcSet={simpleBookmarkingSVG} type="image/svg+xml" />
@@ -310,8 +357,54 @@ const Features = () => {
               },
             }}
           >
-            {/* Illusttration */}
-            <Box>
+            {/* Illustration % blue box behind it */}
+            <Box sx={{ position: "relative" }}>
+              {/* Blue box */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  left: { xs: theme.spacing(-8) },
+                  right: { xs: theme.spacing(-8) },
+                  bottom: { xs: "-37px" },
+
+                  overflow: "hidden",
+
+                  zIndex: -50,
+                }}
+              >
+                <Box
+                  sx={{
+                    paddingInline: theme.spacing(8),
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      maxWidth: { xs: "375px" },
+                      aspectRatio: "321 / 277",
+                      marginInline: "auto",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: { xs: "-37px" },
+                        right: { xs: "35px" },
+
+                        background: theme.palette.primary.main,
+
+                        height: { xs: "203px", xl: "352px" },
+                        width: "1000px",
+
+                        borderRadius: "500px",
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+
               <picture>
                 {/* SVG format  */}
                 <source srcSet={speedySearchingSVG} type="image/svg+xml" />
@@ -408,8 +501,54 @@ const Features = () => {
               },
             }}
           >
-            {/* Illustration */}
-            <Box>
+            {/* Illustration % blue box behind it */}
+            <Box sx={{ position: "relative" }}>
+              {/* Blue box */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: "0",
+                  left: { xs: theme.spacing(-8) },
+                  right: { xs: theme.spacing(-8) },
+                  bottom: { xs: "-37px" },
+
+                  overflow: "hidden",
+
+                  zIndex: -50,
+                }}
+              >
+                <Box
+                  sx={{
+                    paddingInline: theme.spacing(8),
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      maxWidth: { xs: "375px" },
+                      aspectRatio: "311 / 269",
+                      marginInline: "auto",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: { xs: "-37px" },
+                        right: { xs: "35px" },
+
+                        background: theme.palette.primary.main,
+
+                        height: { xs: "203px", xl: "352px" },
+                        width: "1000px",
+
+                        borderRadius: "500px",
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+
               <picture>
                 {/* SVG format  */}
                 <source srcSet={easySharingSVG} type="image/svg+xml" />
