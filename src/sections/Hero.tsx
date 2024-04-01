@@ -54,6 +54,48 @@ const Hero = () => {
             },
           }}
         >
+          <Box
+            sx={{
+              position: "absolute",
+              top: "0",
+              left: "-32px",
+              right: "-32px",
+              bottom: "-48px",
+
+              overflow: "hidden",
+            }}
+          >
+            <Box
+              sx={{
+                paddingInline: "32px",
+              }}
+            >
+              <Box
+                sx={{
+                  position: "relative",
+                  width: "100%",
+                  maxWidth: "375px",
+                  aspectRatio: "auto 309 / 206",
+                  marginInline: "auto",
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "-48px",
+                    left: "36px",
+
+                    background: theme.palette.primary.main,
+
+                    height: "203px",
+                    width: "1000px",
+                    borderRadius: "500px",
+                  }}
+                />
+              </Box>
+            </Box>
+          </Box>
+
           {/* Picture */}
           <Box
             component="picture"
@@ -62,8 +104,6 @@ const Hero = () => {
               display: "block",
               width: "100%",
               maxWidth: { xs: "375px", xl: "574px" },
-              height: "209px",
-              aspectRatio: "313 / 209",
               marginInline: "auto",
               zIndex: 50,
 
