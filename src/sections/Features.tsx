@@ -168,6 +168,7 @@ const Features = () => {
           position: "relative",
           marginInline: { xs: theme.spacing(-8), xl: 0 },
           marginBlockStart: theme.spacing(18),
+          paddingBlockEnd: { md: "48px" },
           overflow: "hidden",
         }}
       >
@@ -213,7 +214,7 @@ const Features = () => {
               },
             }}
           >
-            {/* Illustration % blue box behind it */}
+            {/* Illustration & blue box behind it */}
             <Box sx={{ position: "relative" }}>
               {/* Blue box */}
               <Box
@@ -238,7 +239,7 @@ const Features = () => {
                     sx={{
                       position: "relative",
                       width: "100%",
-                      maxWidth: { xs: "375px" },
+                      maxWidth: { xs: "375px", md: "536px" },
                       aspectRatio: "311 / 201",
                       marginInline: "auto",
                     }}
@@ -357,7 +358,7 @@ const Features = () => {
               },
             }}
           >
-            {/* Illustration % blue box behind it */}
+            {/* Illustration & blue box behind it */}
             <Box sx={{ position: "relative" }}>
               {/* Blue box */}
               <Box
@@ -382,7 +383,7 @@ const Features = () => {
                     sx={{
                       position: "relative",
                       width: "100%",
-                      maxWidth: { xs: "375px" },
+                      maxWidth: { xs: "375px", md: "486px" },
                       aspectRatio: "321 / 277",
                       marginInline: "auto",
                     }}
@@ -526,7 +527,7 @@ const Features = () => {
                     sx={{
                       position: "relative",
                       width: "100%",
-                      maxWidth: { xs: "375px" },
+                      maxWidth: { xs: "375px", md: "486px" },
                       aspectRatio: "311 / 269",
                       marginInline: "auto",
                     }}

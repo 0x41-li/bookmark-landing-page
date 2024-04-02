@@ -132,6 +132,11 @@ function App() {
             src: local("Rubik"), local("Rubik-MediumItalic"),
               url("/assets/fonts/Rubik/Rubik-MediumItalic.ttf") format("truetype");
           }
+
+          #root {
+            overflow-x: hidden;
+            overflow-y: auto;
+          }
         `,
       },
 

@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <Container
       sx={{
-        marginBlockStart: { xs: "40px", md: "48px" },
+        paddingBlockStart: { xs: "40px", md: "48px" },
         marginInline: "auto",
         maxWidth: "1104px",
       }}
