@@ -183,7 +183,8 @@ const Features = () => {
             width: "100%",
             height: "100%",
 
-            paddingInline: theme.spacing(8),
+            paddingInline: { xs: theme.spacing(8), xl: 0 },
+            paddingBlockEnd: { xs: "0", md: "48px" },
 
             zIndex: -50,
 
@@ -194,6 +195,10 @@ const Features = () => {
               md: theme.spacing(8),
               lg: theme.spacing(16),
             },
+
+            [theme.breakpoints.up(2000)]: {
+              display: "none",
+            },
           }}
         >
           <Box
@@ -202,7 +207,7 @@ const Features = () => {
 
               // center the children horizontally
               display: "flex",
-              alignItems: "flex-start",
+              alignItems: { xs: "flex-start", md: "center", xl: "flex-start" },
             }}
           >
             <Box
@@ -212,7 +217,17 @@ const Features = () => {
                 width: "100%",
                 height: "auto",
 
-                maxWidth: { xs: "375px", md: "536px" },
+                maxWidth: () => {
+                  const maxWidth = { xs: "375px", md: "536px" };
+
+                  if (tabsIndex === 1) {
+                    maxWidth["md"] = "486px";
+                  }
+                  if (tabsIndex === 2) {
+                    maxWidth["md"] = "440px";
+                  }
+                  return maxWidth;
+                },
 
                 aspectRatio: () => {
                   if (tabsIndex === 0) return "311 / 201";
@@ -226,11 +241,8 @@ const Features = () => {
               <Box
                 sx={{
                   position: "absolute",
-                  bottom: () => {
-                    return "-37px";
-                  },
-
-                  right: { xs: "35px" },
+                  bottom: { xs: "-37px", xl: "-89px" },
+                  right: { xs: "35px", xl: "65px" },
 
                   background: theme.palette.primary.main,
 
@@ -243,7 +255,7 @@ const Features = () => {
             </Box>
           </Box>
 
-          <Box sx={{ flex: "1" }} />
+          <Box sx={{ flex: "1", maxWidth: "445px" }} />
         </Box>
 
         {/* Slider inner-Wrapper */}
@@ -478,7 +490,7 @@ const Features = () => {
               //
               sx={{
                 "& picture": {
-                  maxWidth: { xs: "375px", md: "486px" },
+                  maxWidth: { xs: "375px", md: "440px" },
                 },
                 "&>*": {
                   sm: {
