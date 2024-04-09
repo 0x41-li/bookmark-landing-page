@@ -162,106 +162,139 @@ const Features = () => {
       </Box>
 
       {/* Tabs Content */}
-      {/* Slider Out Wrapper */}
+      {/* Slider outer-Wrapper */}
       <Box
         sx={{
           position: "relative",
           marginInline: { xs: theme.spacing(-8), xl: 0 },
           marginBlockStart: theme.spacing(18),
           paddingBlockEnd: { md: "48px" },
-          overflow: "hidden",
         }}
       >
-        {/* Slider In Wrapper */}
-        <Stack
-          flexDirection="row"
+        {/* Section with blue boxes behind the illustration */}
+        <Box
           sx={{
-            translate: `${tabsIndex * -100}%`,
-            transition: "translate 400ms ease-in-out",
-            "& > *": {
-              flex: "0 0 100%",
-              paddingInline: { xs: theme.spacing(8), xl: 0 },
-            },
-            "& picture": {
-              display: "block",
-              marginInline: { xs: "auto", lg: "unset" },
-            },
-            "& img": {
-              display: "block",
-              width: "100%",
-              height: "auto",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+
+            width: "100%",
+            height: "100%",
+
+            paddingInline: theme.spacing(8),
+
+            zIndex: -50,
+
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: {
+              xs: theme.spacing(17),
+              md: theme.spacing(8),
+              lg: theme.spacing(16),
             },
           }}
         >
-          {/* Slide */}
-          <Stack
-            flexDirection={{ md: "row" }}
-            alignItems={{ md: "center", xl: "unset" }}
-            justifyContent={{ xl: "space-between" }}
-            gap={{
-              md: theme.spacing(8),
-              lg: theme.spacing(16),
-              xl: 0,
-            }}
+          <Box
             sx={{
-              "& picture": {
-                maxWidth: { xs: "375px", md: "536px" },
-              },
-              "&>*": {
-                sm: {
-                  flex: "1",
-                },
-              },
+              flex: "1",
+
+              // center the children horizontally
+              display: "flex",
+              alignItems: "flex-start",
             }}
           >
-            {/* Illustration & blue box behind it */}
-            <Box sx={{ position: "relative" }}>
-              {/* Blue box */}
+            <Box
+              sx={{
+                position: "relative",
+
+                width: "100%",
+                height: "auto",
+
+                maxWidth: { xs: "375px", md: "536px" },
+
+                aspectRatio: () => {
+                  if (tabsIndex === 0) return "311 / 201";
+                  if (tabsIndex === 1) return "321 / 277";
+                  if (tabsIndex === 2) return "311 / 269";
+                },
+
+                marginInline: { xs: "auto", md: 0 },
+              }}
+            >
               <Box
                 sx={{
                   position: "absolute",
-                  top: "0",
-                  left: { xs: theme.spacing(-8) },
-                  right: { xs: theme.spacing(-8) },
-                  bottom: { xs: "-37px" },
+                  bottom: () => {
+                    return "-37px";
+                  },
 
-                  overflow: "hidden",
+                  right: { xs: "35px" },
 
-                  zIndex: -50,
+                  background: theme.palette.primary.main,
+
+                  height: { xs: "203px", xl: "352px" },
+                  width: "1000px",
+
+                  borderRadius: "500px",
                 }}
-              >
-                <Box
-                  sx={{
-                    paddingInline: theme.spacing(8),
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      maxWidth: { xs: "375px", md: "536px" },
-                      aspectRatio: "311 / 201",
-                      marginInline: "auto",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        bottom: { xs: "-37px" },
-                        right: { xs: "35px" },
+              />
+            </Box>
+          </Box>
 
-                        background: theme.palette.primary.main,
+          <Box sx={{ flex: "1" }} />
+        </Box>
 
-                        height: { xs: "203px", xl: "352px" },
-                        width: "1000px",
+        {/* Slider inner-Wrapper */}
+        <Box
+          sx={{
+            overflow: "hidden",
+          }}
+        >
+          <Stack
+            flexDirection="row"
+            sx={{
+              translate: `${tabsIndex * -100}%`,
+              transition: "translate 400ms ease-in-out",
 
-                        borderRadius: "500px",
-                      }}
-                    />
-                  </Box>
-                </Box>
-              </Box>
-
+              "& > *": {
+                flex: "0 0 100%",
+                paddingInline: { xs: theme.spacing(8), xl: 0 },
+              },
+              "& picture": {
+                display: "block",
+                marginInline: { xs: "auto", lg: "unset" },
+              },
+              "& img": {
+                display: "block",
+                width: "100%",
+                height: "auto",
+              },
+            }}
+          >
+            {/* Slide */}
+            <Stack
+              flexDirection={{ md: "row" }}
+              alignItems={{ md: "center", xl: "unset" }}
+              justifyContent={{ xl: "space-between" }}
+              gap={{
+                md: theme.spacing(8),
+                lg: theme.spacing(16),
+                xl: 0,
+              }}
+              sx={{
+                "& picture": {
+                  maxWidth: { xs: "375px", md: "536px" },
+                },
+                "&>*": {
+                  sm: {
+                    flex: "1",
+                  },
+                },
+              }}
+            >
+              {/* Illustration */}
               <picture>
                 {/* SVG format  */}
                 <source srcSet={simpleBookmarkingSVG} type="image/svg+xml" />
@@ -291,121 +324,73 @@ const Features = () => {
                   loading="lazy"
                 />
               </picture>
-            </Box>
 
-            {/* Right Text Part */}
-            <Box
+              {/* Right Text Part */}
+              <Box
+                sx={{
+                  marginBlockStart: {
+                    xs: theme.spacing(17),
+                    md: theme.spacing(0),
+                    xl: theme.spacing(14),
+                  },
+                  maxWidth: "445px",
+                  marginInline: { xs: "auto", xl: "unset" },
+                  "&>h2, &>p": {
+                    textAlign: { xs: "center", md: "left" },
+                  },
+                  "&>button": {
+                    marginInline: { xs: "auto", md: "unset" },
+                  },
+                }}
+              >
+                <Typography variant="h2">Bookmark in one click</Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
+                >
+                  Organize your bookmarks however you like. Our simple
+                  drag-and-drop interface gives you complete control over how
+                  you manage your favourite sites.
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    marginInline: "auto",
+                    display: "block",
+                    marginBlockStart: {
+                      xs: theme.spacing(4),
+                      md: theme.spacing(8),
+                    },
+                    paddingInline: theme.spacing(6),
+                  }}
+                >
+                  More Info
+                </Button>
+              </Box>
+            </Stack>
+
+            {/* Slide */}
+            <Stack
+              flexDirection={{ md: "row" }}
+              alignItems={{ md: "center", xl: "unset" }}
+              gap={{
+                md: theme.spacing(8),
+                lg: theme.spacing(16),
+                xl: theme.spacing(31),
+              }}
               sx={{
-                marginBlockStart: {
-                  xs: theme.spacing(17),
-                  md: theme.spacing(0),
-                  xl: theme.spacing(14),
+                "& picture": {
+                  maxWidth: { xs: "375px", md: "486px" },
                 },
-                maxWidth: "445px",
-                marginInline: { xs: "auto", xl: "unset" },
-                "&>h2, &>p": {
-                  textAlign: { xs: "center", md: "left" },
-                },
-                "&>button": {
-                  marginInline: { xs: "auto", md: "unset" },
+                "&>*": {
+                  sm: {
+                    flex: "1",
+                  },
                 },
               }}
             >
-              <Typography variant="h2">Bookmark in one click</Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
-              >
-                Organize your bookmarks however you like. Our simple
-                drag-and-drop interface gives you complete control over how you
-                manage your favourite sites.
-              </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{
-                  marginInline: "auto",
-                  display: "block",
-                  marginBlockStart: {
-                    xs: theme.spacing(4),
-                    md: theme.spacing(8),
-                  },
-                  paddingInline: theme.spacing(6),
-                }}
-              >
-                More Info
-              </Button>
-            </Box>
-          </Stack>
-
-          {/* Slide */}
-          <Stack
-            flexDirection={{ md: "row" }}
-            alignItems={{ md: "center", xl: "unset" }}
-            gap={{
-              md: theme.spacing(8),
-              lg: theme.spacing(16),
-              xl: theme.spacing(31),
-            }}
-            sx={{
-              "& picture": {
-                maxWidth: { xs: "375px", md: "486px" },
-              },
-              "&>*": {
-                sm: {
-                  flex: "1",
-                },
-              },
-            }}
-          >
-            {/* Illustration & blue box behind it */}
-            <Box sx={{ position: "relative" }}>
-              {/* Blue box */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "0",
-                  left: { xs: theme.spacing(-8) },
-                  right: { xs: theme.spacing(-8) },
-                  bottom: { xs: "-37px" },
-
-                  overflow: "hidden",
-
-                  zIndex: -50,
-                }}
-              >
-                <Box
-                  sx={{
-                    paddingInline: theme.spacing(8),
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      maxWidth: { xs: "375px", md: "486px" },
-                      aspectRatio: "321 / 277",
-                      marginInline: "auto",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        bottom: { xs: "-37px" },
-                        right: { xs: "35px" },
-
-                        background: theme.palette.primary.main,
-
-                        height: { xs: "203px", xl: "352px" },
-                        width: "1000px",
-
-                        borderRadius: "500px",
-                      }}
-                    />
-                  </Box>
-                </Box>
-              </Box>
-
+              {/* Illustration */}
               <picture>
                 {/* SVG format  */}
                 <source srcSet={speedySearchingSVG} type="image/svg+xml" />
@@ -435,121 +420,74 @@ const Features = () => {
                   loading="lazy"
                 />
               </picture>
-            </Box>
 
-            {/* Right Text Part */}
-            <Box
+              {/* Right Text Part */}
+              <Box
+                sx={{
+                  marginBlockStart: {
+                    xs: theme.spacing(17),
+                    md: theme.spacing(0),
+                    xl: theme.spacing(14),
+                  },
+                  maxWidth: "445px",
+                  marginInline: "auto",
+                  "&>h2, &>p": {
+                    textAlign: { xs: "center", md: "left" },
+                  },
+                  "&>button": {
+                    marginInline: { xs: "auto", md: "unset" },
+                  },
+                }}
+              >
+                <Typography variant="h2">Intelligent search</Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
+                >
+                  Our powerful search feature will help you find saved sites in
+                  no time at all. No need to trawl through all of your
+                  bookmarks.
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    marginInline: "auto",
+                    display: "block",
+                    marginBlockStart: {
+                      xs: theme.spacing(4),
+                      md: theme.spacing(8),
+                    },
+                    paddingInline: theme.spacing(6),
+                  }}
+                >
+                  More Info
+                </Button>
+              </Box>
+            </Stack>
+
+            {/* Slide */}
+            <Stack
+              flexDirection={{ md: "row" }}
+              alignItems={{ md: "center", xl: "unset" }}
+              gap={{
+                md: theme.spacing(8),
+                lg: theme.spacing(16),
+                xl: theme.spacing(31),
+              }}
+              //
               sx={{
-                marginBlockStart: {
-                  xs: theme.spacing(17),
-                  md: theme.spacing(0),
-                  xl: theme.spacing(14),
+                "& picture": {
+                  maxWidth: { xs: "375px", md: "486px" },
                 },
-                maxWidth: "445px",
-                marginInline: "auto",
-                "&>h2, &>p": {
-                  textAlign: { xs: "center", md: "left" },
-                },
-                "&>button": {
-                  marginInline: { xs: "auto", md: "unset" },
+                "&>*": {
+                  sm: {
+                    flex: "1",
+                  },
                 },
               }}
             >
-              <Typography variant="h2">Intelligent search</Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
-              >
-                Our powerful search feature will help you find saved sites in no
-                time at all. No need to trawl through all of your bookmarks.
-              </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{
-                  marginInline: "auto",
-                  display: "block",
-                  marginBlockStart: {
-                    xs: theme.spacing(4),
-                    md: theme.spacing(8),
-                  },
-                  paddingInline: theme.spacing(6),
-                }}
-              >
-                More Info
-              </Button>
-            </Box>
-          </Stack>
-
-          {/* Slide */}
-          <Stack
-            flexDirection={{ md: "row" }}
-            alignItems={{ md: "center", xl: "unset" }}
-            gap={{
-              md: theme.spacing(8),
-              lg: theme.spacing(16),
-              xl: theme.spacing(31),
-            }}
-            //
-            sx={{
-              "& picture": {
-                maxWidth: { xs: "375px", md: "486px" },
-              },
-              "&>*": {
-                sm: {
-                  flex: "1",
-                },
-              },
-            }}
-          >
-            {/* Illustration % blue box behind it */}
-            <Box sx={{ position: "relative" }}>
-              {/* Blue box */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "0",
-                  left: { xs: theme.spacing(-8) },
-                  right: { xs: theme.spacing(-8) },
-                  bottom: { xs: "-37px" },
-
-                  overflow: "hidden",
-
-                  zIndex: -50,
-                }}
-              >
-                <Box
-                  sx={{
-                    paddingInline: theme.spacing(8),
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      maxWidth: { xs: "375px", md: "486px" },
-                      aspectRatio: "311 / 269",
-                      marginInline: "auto",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        bottom: { xs: "-37px" },
-                        right: { xs: "35px" },
-
-                        background: theme.palette.primary.main,
-
-                        height: { xs: "203px", xl: "352px" },
-                        width: "1000px",
-
-                        borderRadius: "500px",
-                      }}
-                    />
-                  </Box>
-                </Box>
-              </Box>
-
+              {/* Illustration */}
               <picture>
                 {/* SVG format  */}
                 <source srcSet={easySharingSVG} type="image/svg+xml" />
@@ -579,52 +517,53 @@ const Features = () => {
                   loading="lazy"
                 />
               </picture>
-            </Box>
 
-            {/* Right Text Part */}
-            <Box
-              sx={{
-                marginBlockStart: {
-                  xs: theme.spacing(17),
-                  md: theme.spacing(0),
-                  xl: theme.spacing(14),
-                },
-                maxWidth: "445px",
-                marginInline: "auto",
-                "&>h2, &>p": {
-                  textAlign: { xs: "center", md: "left" },
-                },
-                "&>button": {
-                  marginInline: { xs: "auto", md: "unset" },
-                },
-              }}
-            >
-              <Typography variant="h2">Share your bookmarks</Typography>
-              <Typography
-                variant="body1"
-                sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
-              >
-                Easily share your bookmarks and collections with others. Create
-                a shareable link that you can send at the click of a button.
-              </Typography>
-              <Button
-                variant="contained"
-                color="primary"
+              {/* Right Text Part */}
+              <Box
                 sx={{
-                  marginInline: "auto",
-                  display: "block",
                   marginBlockStart: {
-                    xs: theme.spacing(4),
-                    md: theme.spacing(8),
+                    xs: theme.spacing(17),
+                    md: theme.spacing(0),
+                    xl: theme.spacing(14),
                   },
-                  paddingInline: theme.spacing(6),
+                  maxWidth: "445px",
+                  marginInline: "auto",
+                  "&>h2, &>p": {
+                    textAlign: { xs: "center", md: "left" },
+                  },
+                  "&>button": {
+                    marginInline: { xs: "auto", md: "unset" },
+                  },
                 }}
               >
-                More Info
-              </Button>
-            </Box>
+                <Typography variant="h2">Share your bookmarks</Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ marginBlockStart: { xl: theme.spacing(4) } }}
+                >
+                  Easily share your bookmarks and collections with others.
+                  Create a shareable link that you can send at the click of a
+                  button.
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    marginInline: "auto",
+                    display: "block",
+                    marginBlockStart: {
+                      xs: theme.spacing(4),
+                      md: theme.spacing(8),
+                    },
+                    paddingInline: theme.spacing(6),
+                  }}
+                >
+                  More Info
+                </Button>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
+        </Box>
       </Box>
     </Container>
   );
