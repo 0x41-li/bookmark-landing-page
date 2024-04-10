@@ -52,7 +52,7 @@ import data from "../data/data.json";
 const Features = () => {
   const theme = useTheme() as Theme;
 
-  // <Tabs> component
+  // Tabs data
   const tabsElRef = useRef<HTMLDivElement>(null);
   const [tabsElWidth, setTabsElWidth] = useState(0);
   const [tabsIndex, setTabsIndex] = useState(0);
