@@ -62,7 +62,7 @@ const Newsletter = () => {
         backgroundColor: theme.palette.primary.main,
         paddingBlockStart: {
           xs: theme.spacing(15),
-          md: `${theme.spacing(14.5)} ${theme.spacing(18.5)}`,
+          md: theme.spacing(14.5),
         },
         paddingBlockEnd: {
           xs: isEmailValid ? theme.spacing(15) : theme.spacing(10),
