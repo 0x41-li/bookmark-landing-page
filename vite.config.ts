@@ -4,6 +4,6 @@ import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "bookmark-landing-page",
+  base: "/bookmark-landing-page/",
   plugins: [react(), svgr()],
 });
