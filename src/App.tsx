@@ -251,11 +251,15 @@ const App: React.FC = () => {
       <CssBaseline />
 
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <Hero />
-      <Features />
-      <DownloadExtension />
-      <FAQ />
-      <Newsletter />
+
+      <main>
+        <Hero />
+        <Features />
+        <DownloadExtension />
+        <FAQ />
+        <Newsletter />
+      </main>
+
       <Footer />
     </ThemeProvider>
   );
