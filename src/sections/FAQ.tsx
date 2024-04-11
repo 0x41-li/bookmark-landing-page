@@ -7,11 +7,15 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import QA from "../components/QA";
-import data from "../data/data.json";
-import { Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 
-const FAQ = () => {
+// QA
+import QA from "../components/QA";
+
+// data
+import data from "../data/data.json";
+
+const FAQ: React.FC = () => {
   const theme = useTheme() as Theme;
   const [openQAIndex, setOpenQAIndex] = useState<number | null>(null);
 

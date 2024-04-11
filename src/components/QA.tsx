@@ -15,7 +15,7 @@ type QAProps = {
   setOpenQAIndex: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-const QA = (props: QAProps) => {
+const QA: React.FC<QAProps> = (props) => {
   const theme = useTheme() as Theme;
 
   const handleQuestionClick = () => {

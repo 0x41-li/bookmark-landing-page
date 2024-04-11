@@ -10,7 +10,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // ---- Images import ----
 // ------ Simple Bookmarking illustrationn
@@ -49,7 +49,7 @@ import easySharing440wAVIF from "../assets/images/features/easy-sharing-440w.avi
 // data
 import data from "../data/data.json";
 
-const Features = () => {
+const Features: React.FC = () => {
   const theme = useTheme() as Theme;
 
   // Tabs data

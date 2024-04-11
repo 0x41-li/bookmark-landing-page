@@ -28,7 +28,7 @@ import operaWEBP from "../assets/images/download-extension/opera.webp";
 import operaPNG from "../assets/images/download-extension/opera.png";
 // ---- Images import ----
 
-const DownloadExtension = () => {
+const DownloadExtension: React.FC = () => {
   const theme = useTheme() as Theme;
 
   return (

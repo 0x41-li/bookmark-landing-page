@@ -1,17 +1,19 @@
 // Utilities
 import { ThemeProvider, alpha, createTheme } from "@mui/material/styles";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CssBaseline } from "@mui/material";
 import { colors } from "./designSystem";
 
-// Website parts
+// Shared sections
 import Header from "./shared/Header.tsx";
+import Footer from "./shared/Footer.tsx";
+
+// landing page sections
 import Hero from "./sections/Hero.tsx";
 import Features from "./sections/Features.tsx";
 import DownloadExtension from "./sections/DownloadExtension.tsx";
 import FAQ from "./sections/FAQ.tsx";
 import Newsletter from "./sections/Newsletter.tsx";
-import Footer from "./sections/Footer.tsx";
 
 // Mui module extension
 // ! I tried to put this in another file, but I faced an error which took me a lot of time and couldn't fix it in 2 hours, so I decided to give it a break and continue the project
@@ -27,7 +29,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-function App() {
+const App: React.FC = () => {
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -257,6 +259,6 @@ function App() {
       <Footer />
     </ThemeProvider>
   );
-}
+};
 
 export default App;

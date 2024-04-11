@@ -22,12 +22,12 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 
   return (
     <Container
+      component="header"
       sx={{
         paddingBlockStart: { xs: "40px", md: "48px" },
         marginInline: "auto",
         maxWidth: "1104px",
       }}
-      component="header"
     >
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         {/* Logo */}

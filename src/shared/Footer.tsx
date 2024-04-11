@@ -7,8 +7,9 @@ import SocialMediaIcon from "../components/SocialMediaIcon";
 
 // data
 import data from "../data/data.json";
+import React from "react";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const theme = useTheme() as Theme;
 
   // data
@@ -22,7 +23,7 @@ const Footer = () => {
         paddingBlock: { xs: theme.spacing(10), lg: theme.spacing(8) },
         backgroundColor: theme.palette.darkBlue.main,
       }}
-      component="section"
+      component="footer"
     >
       {/* Inner Wrapper */}
       <Box

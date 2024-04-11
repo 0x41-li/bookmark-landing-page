@@ -28,7 +28,7 @@ import bookmarkInterfaceIllustration575wAVIF from "../assets/images/hero-section
 // hero data
 import data from "../data/data.json";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const theme = useTheme() as Theme;
 
   const heroData = data.hero;

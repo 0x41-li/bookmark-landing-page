@@ -9,7 +9,7 @@ import {
   alpha,
   useTheme,
 } from "@mui/material";
-import { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import isEmail from "validator/lib/isEmail";
 
 // data
@@ -23,7 +23,7 @@ type FormState = {
   email: string;
 };
 
-const Newsletter = () => {
+const Newsletter: React.FC = () => {
   // theme & section text content data
   const theme = useTheme() as Theme;
   const newsletterData = data.newsletter;
