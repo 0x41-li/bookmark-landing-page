@@ -113,6 +113,7 @@ const Footer: React.FC = () => {
               <ListItem key={item.name}>
                 <Link
                   href={item.href}
+                  aria-label={`Visit our ${item.name} page`}
                   sx={{ padding: { xs: theme.spacing(2), lg: 0 } }}
                 >
                   <SocialMediaIcon
